@@ -1,76 +1,65 @@
 // Blog Section
 .blog-section {
-  padding: rem(24) rem(20) rem(60);
+  padding: rem(40) rem(20) rem(60);
 
   @include mq-mob-inv {
-    padding: rem(40) rem(132) rem(120);
+    padding: rem(60) rem(132) rem(120);
+  }
+
+  &__header {
+    text-align: center;
+    max-width: rem(900);
+    margin-inline: auto;
+    margin-bottom: rem(32);
+
+    @include mq-mob-inv {
+      margin-bottom: rem(48);
+    }
+
+    p {
+      font-size: rem(14);
+      color: $textColor;
+      margin-top: rem(16);
+
+      @include mq-mob-inv {
+        font-size: rem(18);
+        margin-top: rem(20);
+      }
+    }
   }
 
   &__title {
     font-size: rem(40);
-    font-weight: 600;
-    margin-bottom: rem(24);
+    font-weight: 400;
+    line-height: 1.2;
 
     @include mq-mob-inv {
-      font-size: rem(64);
-      margin-bottom: rem(40);
+      font-size: rem(80);
+    }
+
+    strong {
+      font-weight: 600;
     }
   }
 }
 
-// Breadcrumb
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: rem(8);
-  font-size: rem(14);
-  margin-bottom: rem(16);
-  color: $textColor;
-
-  @include mq-mob-inv {
-    font-size: 1rem;
-    margin-bottom: rem(24);
-  }
-
-  a {
-    color: $textColor;
-    transition: $transition;
-
-    @include hover {
-      color: $accentColor;
-    }
-  }
-
-  &__separator {
-    color: #999;
-  }
-
-  &__current {
-    color: $accentColor;
-    font-weight: 500;
-  }
-}
-
-// Blog Filter
+// Blog Filter - Pill Style
 .blog-filter {
   display: flex;
-  gap: rem(24);
+  flex-wrap: wrap;
+  gap: rem(10);
   margin-bottom: rem(32);
-  border-bottom: 1px solid #E5E5E5;
-  padding-bottom: rem(16);
-  overflow-x: auto;
+  justify-content: center;
 
   @include mq-mob-inv {
-    gap: rem(40);
+    gap: rem(16);
     margin-bottom: rem(48);
-    padding-bottom: rem(20);
   }
 
   button {
-    position: relative;
-    padding: 0;
-    padding-bottom: rem(16);
-    border: none;
+    padding: rem(12) rem(24);
+    border-radius: rem(50);
+    border: 1px solid #D9D9D9;
     background: transparent;
     font-size: rem(14);
     font-weight: 500;
@@ -80,30 +69,18 @@
     white-space: nowrap;
 
     @include mq-mob-inv {
-      font-size: rem(18);
-      padding-bottom: rem(20);
-    }
-
-    &::after {
-      @include bf-af;
-      bottom: rem(-1);
-      left: 0;
-      width: 100%;
-      height: rem(3);
-      background: $accentColor;
-      transform: scaleX(0);
-      transition: $transition;
+      padding: rem(14) rem(32);
+      font-size: 1rem;
     }
 
     &.isActive {
+      background: $lightBg;
+      border-color: $lightBg;
       color: $accentColor;
-
-      &::after {
-        transform: scaleX(1);
-      }
     }
 
     @include hover {
+      border-color: $accentColor;
       color: $accentColor;
     }
   }

@@ -3176,76 +3176,66 @@ html[dir=rtl] form input[type=tel] {
 }
 
 .blog-section {
-  padding: 1.5rem 1.25rem 3.75rem;
+  padding: 2.5rem 1.25rem 3.75rem;
 }
 @media (orientation: landscape), (min-width: 769px) and (orientation: portrait) {
   .blog-section {
-    padding: 2.5rem 8.25rem 7.5rem;
+    padding: 3.75rem 8.25rem 7.5rem;
+  }
+}
+.blog-section__header {
+  text-align: center;
+  max-width: 56.25rem;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+@media (orientation: landscape), (min-width: 769px) and (orientation: portrait) {
+  .blog-section__header {
+    margin-bottom: 3rem;
+  }
+}
+.blog-section__header p {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 1rem;
+}
+@media (orientation: landscape), (min-width: 769px) and (orientation: portrait) {
+  .blog-section__header p {
+    font-size: 1.125rem;
+    margin-top: 1.25rem;
   }
 }
 .blog-section__title {
   font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
 }
 @media (orientation: landscape), (min-width: 769px) and (orientation: portrait) {
   .blog-section__title {
-    font-size: 4rem;
-    margin-bottom: 2.5rem;
+    font-size: 5rem;
   }
 }
-
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  margin-bottom: 1rem;
-  color: rgba(0, 0, 0, 0.8);
-}
-@media (orientation: landscape), (min-width: 769px) and (orientation: portrait) {
-  .breadcrumb {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-}
-.breadcrumb a {
-  color: rgba(0, 0, 0, 0.8);
-  transition: 0.5s ease;
-}
-@media (any-hover: hover) {
-  .breadcrumb a:hover {
-    color: #003D68;
-  }
-}
-.breadcrumb__separator {
-  color: #999;
-}
-.breadcrumb__current {
-  color: #003D68;
-  font-weight: 500;
+.blog-section__title strong {
+  font-weight: 600;
 }
 
 .blog-filter {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.625rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid #E5E5E5;
-  padding-bottom: 1rem;
-  overflow-x: auto;
+  justify-content: center;
 }
 @media (orientation: landscape), (min-width: 769px) and (orientation: portrait) {
   .blog-filter {
-    gap: 2.5rem;
+    gap: 1rem;
     margin-bottom: 3rem;
-    padding-bottom: 1.25rem;
   }
 }
 .blog-filter button {
-  position: relative;
-  padding: 0;
-  padding-bottom: 1rem;
-  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3.125rem;
+  border: 1px solid #D9D9D9;
   background: transparent;
   font-size: 0.875rem;
   font-weight: 500;
@@ -3256,29 +3246,18 @@ html[dir=rtl] form input[type=tel] {
 }
 @media (orientation: landscape), (min-width: 769px) and (orientation: portrait) {
   .blog-filter button {
-    font-size: 1.125rem;
-    padding-bottom: 1.25rem;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
   }
 }
-.blog-filter button::after {
-  position: absolute;
-  content: "";
-  bottom: -0.0625rem;
-  left: 0;
-  width: 100%;
-  height: 0.1875rem;
-  background: #003D68;
-  transform: scaleX(0);
-  transition: 0.5s ease;
-}
 .blog-filter button.isActive {
+  background: #E1F5FF;
+  border-color: #E1F5FF;
   color: #003D68;
-}
-.blog-filter button.isActive::after {
-  transform: scaleX(1);
 }
 @media (any-hover: hover) {
   .blog-filter button:hover {
+    border-color: #003D68;
     color: #003D68;
   }
 }
