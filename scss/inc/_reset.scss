@@ -1,0 +1,183 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+}
+
+article,
+aside,
+details,
+figure,
+figfz-x-sm,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: block;
+	max-width: 100%;
+}
+
+.hidden,
+[hidden],
+template {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	transition: $transition all;
+	color: inherit;
+
+	&:active,
+	&:hover {
+		outline: 0;
+	}
+
+	img {
+		border: 0;
+	}
+
+	@include hover {
+		text-decoration: none;
+	}
+}
+
+sub,
+sup {
+	font-size: .5em;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -1em;
+}
+
+sub {
+	bottom: -.25em;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	appearance: none;
+	border: 0;
+	font: inherit;
+	color: inherit;
+	background-color: transparent;
+}
+
+button,
+input[type="button"] {
+	cursor: pointer;
+	appearance: button;
+	transition: $transition all;
+}
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+}
+
+button,
+input {
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
+textarea,
+input {
+	&::placeholder {
+		color: inherit;
+		transition: $transition all;
+	}
+
+	&:focus {
+		&::placeholder {
+			color: transparent;
+		}
+	}
+}
+
+input {
+	&[type="reset"] {
+		cursor: pointer;
+		appearance: button;
+	}
+
+	&[type="number"] {
+		-moz-appearance: textfield;
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			height: auto;
+		}
+	}
+
+	&[type="search"] {
+		appearance: textfield;
+
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration {
+			appearance: none;
+		}
+	}
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+
+textarea {
+	resize: none;
+	overflow: auto;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	pointer-events: none;
+	user-select: none;
+	border: 0;
+	display: block;
+}
+
+section {
+	position: relative;
+	overflow: hidden;
+}

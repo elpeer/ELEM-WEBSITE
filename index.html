@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Elem</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/main.min.css" />
+</head>
+
+<body>
+
+  <main>
+    <style>
+      main:has(.pages-list) {
+        padding: 0 !important;
+      }
+
+      .pages-list {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        gap: .5rem;
+        padding: 40px;
+      }
+
+      .pages-list a:hover {
+        text-decoration: underline;
+      }
+
+      .pages-list a[disabled] {
+        opacity: 0.75;
+        pointer-events: none;
+      }
+    </style>
+    <ul class="pages-list">
+      <li><a href="/elem/home.html" target="_blank">Home</a></li>
+    </ul>
+  </main>
+
+  <script src="libs/jquery/jquery.min.js"></script>
+  <script src="libs/swiper/swiper.min.js"></script>
+  <script src="libs/aos/aos.js"></script>
+  <script src="libs/fancybox/fancybox.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

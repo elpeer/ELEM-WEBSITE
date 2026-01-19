@@ -1,0 +1,58 @@
+@import "../libs/swiper/swiper.min";
+@import "../libs/aos/scss/aos";
+@import "../libs/fancybox/fancybox";
+
+.swiper-btn-next,
+.swiper-btn-prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(48);
+  height: rem(48);
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  color: $primaryColor;
+  transition: $transition;
+  border: 1px solid $primaryColor;
+
+  &.--light {
+    background: rgba(255, 255, 255, 0.2);
+    border: 0;
+    color: #fff;
+
+    @include hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+  }
+
+  @include hover {
+    background: $primaryColor;
+    color: #fff;
+  }
+
+  &.swiper-button-lock {
+    display: none;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.default-pagination {
+  width: auto !important;
+
+  .swiper-pagination-bullet {
+    opacity: .2 !important;
+    width: rem(6) !important;
+    height: rem(6) !important;
+    transition: $transition;
+    background: linear-gradient(0.04deg, #000000 20.78%, #18181C 78.49%, #18181C 99.96%);
+
+    &-active {
+      opacity: 1 !important;
+    }
+  }
+}

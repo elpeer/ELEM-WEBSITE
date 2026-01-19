@@ -1,0 +1,392 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+
+  &-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: $transition;
+    background: #fff;
+
+    &::before {
+      @include bf-af;
+      inset: 0;
+      background: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 5;
+    }
+
+    &:has(.mobile-menu.isActive)::before {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .btn {
+      position: relative;
+      z-index: 5;
+    }
+
+    @include mq-mob {
+      height: rem(82);
+      padding-inline: rem(14) rem(11);
+      gap: 0.5rem;
+    }
+
+    @include mq-mob-inv {
+      justify-content: space-between;
+      height: rem(114);
+      padding-inline: rem(68) rem(36);
+    }
+  }
+
+  &.fixed {
+    .header-inner {
+      height: rem(84);
+
+      @include mq-mob {
+        height: rem(60);
+      }
+
+      .logo {
+        width: rem(140);
+
+        @include mq-mob {
+          width: rem(100);
+        }
+      }
+
+      box-shadow: 0 rem(2) rem(4) rgba(#000, 0.1);
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    width: rem(195);
+    position: relative;
+    z-index: 10;
+
+    img {
+      width: 100%;
+    }
+
+    @include mq-mob-inv {
+      margin-inline-end: auto;
+    }
+
+    @include mq-mob {
+      margin-inline-start: auto;
+      width: rem(129);
+      order: 2;
+    }
+  }
+}
+
+.mobile-menu {
+  @include mq-mob-inv {
+    display: flex;
+    align-items: center;
+    gap: rem(30);
+
+    &:not(:last-child) {
+      margin-inline-end: rem(28);
+    }
+  }
+
+  @include mq-mob {
+    position: fixed;
+    width: 100%;
+    height: 100svh;
+    top: 0;
+    left: 0;
+    padding: rem(96) rem(24) 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: $transition;
+    overflow: auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &.isActive {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+
+  .separator {
+    display: inline-block;
+    width: 1px;
+    background: #CACACA;
+    height: rem(30);
+    margin-inline-start: .5rem;
+
+    @include mq-mob {
+      display: none;
+    }
+  }
+
+  .social {
+    display: flex;
+    gap: 1.25rem;
+
+    @include mq-mob-inv {
+      margin-inline-start: rem(70);
+    }
+
+    a {
+      line-height: 1;
+      font-size: 2rem;
+      color: $accentColor;
+
+      @include hover {
+        color: darken($accentColor, 10%);
+      }
+    }
+  }
+}
+
+.lang-switcher {
+  position: relative;
+
+  &__current {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: capitalize;
+  }
+
+  .icon__dropdown {
+    font-size: 1.5rem;
+    transition: $transition;
+  }
+
+  ul {
+    text-transform: capitalize;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    inset-inline-start: 0;
+    opacity: 0;
+    width: 100%;
+    visibility: hidden;
+    transform: translateY(.5rem);
+    transition: $transition;
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 1rem rgba(#000, .25);
+
+    &::before {
+      @include bf-af;
+      width: 100%;
+      height: .5rem;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+  a {
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+
+  .current-lang {
+    pointer-events: none;
+    opacity: 0.75;
+  }
+
+  @include hover {
+    .icon__dropdown {
+      transform: scaleY(-1);
+    }
+
+    ul {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+
+.main-menu {
+  @include mq-mob {
+    margin-bottom: auto;
+  }
+
+  >ul {
+    display: flex;
+    position: relative;
+
+    @include mq-mob-inv {
+      gap: rem(35);
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    @include mq-mob {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    >.menu-item-has-children {
+      position: relative;
+
+      >a {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+
+        &::after {
+          content: "\e900"; //icon__dropwdown
+          font-family: 'icomoon' !important;
+          transition: $transition;
+          line-height: 1;
+        }
+
+        &.opened {
+          &::after {
+            transform: scaleY(-1);
+          }
+        }
+      }
+
+      @include hover {
+        >.sub-menu {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        >a {
+          &::before {
+            transform-origin: 0 0;
+            transform: scaleX(1);
+          }
+
+          &::after {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      >.sub-menu {
+        @include mq-mob-inv {
+          position: absolute;
+          background: #fff;
+          padding: 1rem;
+          border-radius: .5rem;
+          box-shadow: 0 0 1rem rgba(#000, .25);
+          inset-inline-start: 0;
+          top: calc(100% + 2.25rem);
+          opacity: 0;
+          visibility: hidden;
+          transition: $transition;
+
+          &::before {
+            @include bf-af;
+            height: 2.25rem;
+            width: 100%;
+            bottom: 100%;
+            left: 0;
+          }
+
+          a {
+            white-space: nowrap;
+          }
+        }
+
+        @include mq-mob {
+          display: none;
+          padding-top: 1rem;
+          padding-inline-start: 1rem;
+
+          li {
+            &:not(:last-child) {
+              margin-bottom: rem(8);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  a:not(.btn) {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      @include bf-af;
+      width: 100%;
+      height: rem(1);
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform .3s;
+      transform-origin: 100% 0;
+      background: currentColor;
+    }
+
+    @include hover {
+      &::before {
+        transform-origin: 0 0;
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.burger-btn {
+  @include mq-mob-inv {
+    display: none;
+  }
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  align-items: flex-end;
+  z-index: 10;
+  padding: rem(14) rem(10);
+  width: rem(44);
+  height: rem(44);
+
+  span {
+    display: block;
+    width: 100%;
+    height: rem(2);
+    transition: $transition;
+    background-color: #000;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: rem(50);
+  }
+
+  &.isActive {
+    span {
+      &:nth-of-type(1) {
+        transform: rotate(45deg);
+        top: rem(7);
+      }
+
+      &:nth-of-type(2) {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+
+      &:nth-of-type(3) {
+        top: rem(-7);
+        transform: rotate(-45deg);
+        width: 100%;
+      }
+    }
+  }
+}

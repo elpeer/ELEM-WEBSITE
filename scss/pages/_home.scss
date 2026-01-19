@@ -1,0 +1,1800 @@
+.home-hero {
+  height: rem(760);
+  display: flex;
+  align-items: center;
+
+  @include mq-mob {
+    height: rem(542);
+  }
+
+  &__media {
+    position: absolute;
+    inset: 0;
+
+    video,
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    max-width: rem(1091);
+    margin-inline: auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: rem(18);
+    padding-inline: .5rem;
+
+    h1 {
+      font-size: rem(118);
+      font-weight: 400;
+      line-height: 1;
+
+      @include mq-mob {
+        font-size: 2.5rem;
+      }
+
+      strong,
+      b {
+        font-weight: 600;
+      }
+    }
+
+    p {
+      font-weight: 500;
+      max-width: rem(982);
+      margin-inline: auto;
+      line-height: 1.4;
+
+      @include mq-mob-inv {
+        font-size: 1.5rem;
+        line-height: 1.48;
+      }
+    }
+
+    .btns {
+      margin-top: rem(10);
+
+      @include mq-mob {
+        flex-direction: column-reverse;
+
+        .btn {
+          min-width: rem(210);
+        }
+      }
+    }
+  }
+}
+
+.stats-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-block: rem(38) rem(77);
+  padding-inline: rem(20);
+  gap: rem(24) 2rem;
+
+  @include mq-mob-inv {
+    padding-inline: rem(178);
+    margin-block: rem(55) rem(118);
+    gap: rem(52);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    gap: 0.25rem;
+    width: calc(50% - #{rem(32)}/2);
+
+    @include mq-mob-inv {
+      gap: 1rem;
+      width: calc(20% - #{rem(52)}*4/5);
+
+      &::after {
+        @include bf-af;
+        width: 1px;
+        height: 3rem;
+        background: #CECECE;
+        top: 50%;
+        transform: translateY(-50%);
+        inset-inline-end: rem(-26);
+      }
+
+      &:last-child,
+      &:nth-child(5n+5) {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .icon {
+      width: rem(60);
+
+      @include mq-mob {
+        width: 3rem;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .number {
+      direction: ltr;
+      font-weight: 500;
+      font-size: 3rem;
+      line-height: 1.32;
+      color: #232323;
+
+      @include mq-mob {
+        font-size: rem(36);
+      }
+    }
+
+    >span {
+      color: $textColor;
+      font-size: rem(18);
+
+      @include mq-mob {
+        font-size: rem(14);
+      }
+    }
+  }
+}
+
+.content-section {
+  display: grid;
+  margin-block: rem(68);
+  padding-inline: rem(20);
+  gap: rem(28);
+
+  @include mq-mob-inv {
+    margin-block: rem(100);
+    padding-inline: rem(132);
+    grid-template-columns: 1fr rem(724);
+    gap: 5rem;
+  }
+
+  &__text {
+    color: $textColor;
+    font-size: rem(14);
+
+    @include mq-mob-inv {
+      font-size: rem(20);
+      padding-top: 1.5rem;
+    }
+
+    .section-title {
+      margin-bottom: rem(38);
+
+      @include mq-mob {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__media {
+    border-radius: 2rem;
+    overflow: hidden;
+
+    @include mq-mob {
+      border-radius: 1rem;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.features-section {
+  padding-block: 4rem rem(88);
+  background: rgba(#E1F5FF, .57);
+
+  @include mq-mob {
+    padding-block: 2rem rem(90);
+    padding-inline: rem(20);
+  }
+
+  &__header {
+    max-width: rem(1050);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: rem(22);
+    text-align: center;
+
+    @include mq-mob {
+      gap: rem(10);
+
+      .section-title {
+        max-width: rem(262);
+        margin-inline: auto;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(65);
+
+      @include mq-mob {
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    p {
+      max-width: rem(815);
+      margin-inline: auto;
+      font-size: rem(14);
+
+      @include mq-mob-inv {
+        font-size: rem(20);
+      }
+    }
+  }
+
+  &__inner {
+    max-width: rem(1554);
+    position: relative;
+
+    @include mq-mob-inv {
+      margin-inline-start: rem(168);
+    }
+
+    @include mq-mob {
+      padding-block: rem(192) rem(163);
+    }
+  }
+
+  &__center {
+    width: rem(537);
+    aspect-ratio: 1;
+    background: rgba(205, 238, 255, 0.35);
+    border-radius: 50%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @include mq-mob {
+      width: rem(310);
+    }
+
+    &::before {
+      @include bf-af;
+      inset: rem(68);
+      border-radius: 50%;
+      background: rgba(225, 245, 255, 0.6);
+      opacity: 0.33;
+      box-shadow: 0px 2.1445px 27.9857px #6EBDF5;
+
+      @include mq-mob {
+        inset: rem(38);
+      }
+    }
+
+    &-inner {
+      width: percent(263, 537);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      img {
+        width: rem(194);
+        position: relative;
+        z-index: 2;
+        mix-blend-mode: multiply;
+
+        @include mq-mob {
+          width: rem(109);
+        }
+      }
+
+      &::before {
+        @include bf-af;
+        inset: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid #FFFFFF;
+        box-shadow: 0px 2.1445px 27.9857px #6EBDF5;
+        border-radius: 50%;
+        opacity: 0.65;
+      }
+    }
+  }
+
+  &__item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .line {
+      position: absolute;
+      background: rgba(#000, .1);
+
+      @include mq-mob-inv {
+        height: 1px;
+      }
+
+      @include mq-mob {
+        width: 1px;
+      }
+
+      &::before {
+        @include bf-af;
+        border-radius: 50%;
+        background: #49A0DE;
+
+        @include mq-mob-inv {
+          width: rem(10);
+          height: rem(10);
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        @include mq-mob {
+          width: rem(5);
+          height: rem(5);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      &::after {
+        @include bf-af;
+
+        @include mq-mob-inv {
+          top: 50%;
+          transform: translateY(-50%);
+          background: linear-gradient(90deg, #49A0DE 0%, rgba(#49A0DE, 0) 100%);
+          height: 2px;
+        }
+
+        @include mq-mob {
+          width: 2px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: linear-gradient(to top, #49A0DE 0%, rgba(#49A0DE, 0) 100%);
+        }
+      }
+    }
+
+    &-media {
+      width: rem(145);
+      aspect-ratio: 145/110;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0px 4px 33.5px rgba(213, 241, 255, 0.7);
+      backdrop-filter: blur(40px);
+      border-radius: 1.5rem;
+      overflow: hidden;
+
+      @include mq-mob {
+        aspect-ratio: 1;
+        width: rem(57);
+        border-radius: .75rem;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-label {
+      font-weight: 500;
+      text-align: center;
+      min-width: 100%;
+      line-height: 1.2;
+      backdrop-filter: blur(2.5rem);
+      box-shadow: 0px 4px 33.5px #C2E9FD;
+      font-size: rem(13);
+      padding: 0.25rem;
+      position: absolute;
+      left: 50%;
+      top: calc(100% + #{rem(4)});
+      transform: translateX(-50%);
+
+      @include mq-mob {
+        width: max-content;
+        max-width: rem(105);
+        border-radius: .75rem;
+      }
+
+      @include mq-mob-inv {
+        border-radius: 1.5rem;
+        top: calc(100% + #{rem(8)});
+        white-space: nowrap;
+        padding: 0.5rem 1rem;
+        font-size: rem(18);
+      }
+    }
+
+    &.--start {
+      .line {
+        &::after {
+          @include mq-mob-inv {
+            inset-inline-end: 0;
+          }
+
+          @include mq-mob {
+            bottom: 0;
+          }
+        }
+
+        &::before {
+          @include mq-mob-inv {
+            inset-inline-start: calc(100% + #{rem(7)});
+          }
+
+          @include mq-mob {
+            top: 100%;
+          }
+        }
+      }
+    }
+
+    &.--end {
+      .line {
+        &::after {
+          @include mq-mob-inv {
+            inset-inline-start: 0;
+            background: linear-gradient(-90deg, #49A0DE 0%, rgba(#49A0DE, 0) 100%);
+          }
+
+          @include mq-mob {
+            background: linear-gradient(to bottom, #49A0DE 0%, rgba(#49A0DE, 0) 100%);
+          }
+        }
+
+        &::before {
+          @include mq-mob-inv {
+            inset-inline-end: calc(100% + #{rem(7)});
+          }
+
+          @include mq-mob {
+            bottom: 100%;
+          }
+        }
+      }
+    }
+
+    &.--light {
+      .features-section__item-label {
+        background: rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    &.--dark {
+      .features-section__item-label {
+        background: #84BCD7;
+        color: #fff;
+      }
+    }
+
+    &.--item-1 {
+      @include mq-mob-inv {
+        top: rem(-45);
+        inset-inline-start: rem(82);
+      }
+
+      @include mq-mob {
+        top: rem(30);
+        inset-inline-start: rem(10);
+      }
+
+      .line {
+        @include mq-mob-inv {
+          width: rem(438);
+          top: rem(84);
+          inset-inline-start: rem(159);
+
+          &::after {
+            width: rem(60);
+          }
+        }
+
+        @include mq-mob {
+          height: rem(214);
+          top: rem(47);
+
+          &::after {
+            height: rem(26);
+          }
+        }
+      }
+    }
+
+    &.--item-2 {
+      @include mq-mob-inv {
+        top: rem(73);
+        inset-inline-start: rem(296);
+      }
+
+      @include mq-mob {
+        top: rem(113);
+        inset-inline-start: rem(80);
+      }
+
+      .line {
+        @include mq-mob-inv {
+          width: rem(118);
+          top: rem(77);
+          inset-inline-start: rem(156);
+
+          &::after {
+            width: rem(102);
+          }
+        }
+
+        @include mq-mob {
+          height: rem(55);
+          top: rem(48);
+
+          &::after {
+            height: rem(20);
+          }
+        }
+      }
+    }
+
+    &.--item-3 {
+      @include mq-mob-inv {
+        top: rem(191);
+        inset-inline-start: 0;
+      }
+
+      @include mq-mob {
+        top: 0;
+        inset-inline-start: rem(154);
+      }
+
+      .line {
+        @include mq-mob-inv {
+          width: rem(380);
+          top: rem(77);
+          inset-inline-start: rem(169);
+
+          &::after {
+            width: rem(75);
+          }
+        }
+
+        @include mq-mob {
+          height: rem(133);
+          top: rem(77);
+
+          &::after {
+            height: rem(26);
+          }
+        }
+      }
+    }
+
+    &.--item-4 {
+      @include mq-mob-inv {
+        top: rem(309);
+        inset-inline-start: rem(296);
+      }
+
+      @include mq-mob {
+        top: rem(104);
+        inset-inline-start: rem(226);
+      }
+
+      .line {
+        @include mq-mob-inv {
+          width: rem(224);
+          top: rem(73);
+          inset-inline-start: rem(124);
+
+          &::after {
+            width: rem(80);
+          }
+        }
+
+        @include mq-mob {
+          height: rem(122);
+          top: rem(6);
+
+          &::after {
+            height: rem(46);
+          }
+        }
+      }
+    }
+
+    &.--item-5 {
+      @include mq-mob-inv {
+        top: rem(427);
+        inset-inline-start: rem(82);
+      }
+
+      @include mq-mob {
+        top: rem(15);
+        inset-inline-start: rem(278);
+      }
+
+      .line {
+        @include mq-mob-inv {
+          width: rem(411);
+          top: rem(77);
+          inset-inline-start: rem(165);
+
+          &::after {
+            width: rem(75);
+          }
+        }
+
+        @include mq-mob {
+          height: rem(210);
+          top: rem(47);
+
+          &::after {
+            height: rem(26);
+          }
+        }
+      }
+    }
+
+    &.--item-6 {
+      @include mq-mob-inv {
+        top: rem(-18);
+        inset-inline-end: rem(206);
+      }
+
+      @include mq-mob {
+        inset: auto;
+        bottom: rem(120);
+        inset-inline-start: rem(12);
+      }
+
+      .line {
+        @include mq-mob-inv {
+          width: rem(270);
+          top: rem(82);
+          inset-inline-end: rem(144);
+
+          &::after {
+            width: rem(148);
+          }
+        }
+
+        @include mq-mob {
+          height: rem(69);
+          bottom: rem(54);
+
+          &::after {
+            height: rem(26);
+          }
+        }
+      }
+    }
+
+    &.--item-7 {
+      @include mq-mob-inv {
+        top: rem(112);
+        inset-inline-end: 0;
+      }
+
+      @include mq-mob {
+        inset: auto;
+        bottom: rem(20);
+        inset-inline-start: rem(100);
+      }
+
+      .line {
+        @include mq-mob-inv {
+          width: rem(380);
+          top: rem(77);
+          inset-inline-end: rem(169);
+
+          &::after {
+            width: rem(61);
+          }
+        }
+
+        @include mq-mob {
+          height: rem(80);
+          bottom: rem(80);
+
+          &::after {
+            height: rem(26);
+          }
+        }
+      }
+    }
+
+    &.--item-8 {
+      @include mq-mob-inv {
+        top: rem(238);
+        inset-inline-end: rem(300);
+      }
+
+      @include mq-mob {
+        inset: auto;
+        bottom: rem(71);
+        inset-inline-start: rem(190);
+      }
+
+      .line {
+        @include mq-mob-inv {
+          width: rem(61);
+          top: rem(76);
+          inset-inline-end: rem(152);
+
+          &::after {
+            width: rem(61);
+          }
+        }
+
+        @include mq-mob {
+          height: rem(118);
+          bottom: 0;
+
+          &::after {
+            height: rem(26);
+          }
+        }
+      }
+    }
+
+    &.--item-9 {
+      @include mq-mob-inv {
+        inset-inline-end: rem(73);
+        top: rem(371);
+      }
+
+      @include mq-mob {
+        inset: auto;
+        bottom: rem(25);
+        inset-inline-start: rem(285);
+      }
+
+      .line {
+        @include mq-mob-inv {
+          width: rem(360);
+          top: rem(70);
+          inset-inline-end: rem(157);
+
+          &::after {
+            width: rem(102);
+          }
+        }
+
+        @include mq-mob {
+          height: rem(230);
+          bottom: rem(2);
+
+          &::after {
+            height: rem(26);
+          }
+        }
+      }
+    }
+  }
+}
+
+.stats-tiles {
+  margin-block: rem(54);
+  padding-inline: .5rem;
+
+  @include mq-mob-inv {
+    margin-block: rem(100);
+    padding-inline: rem(295);
+  }
+
+  &__header {
+    margin-inline: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: rem(14);
+    gap: rem(10);
+    max-width: rem(350);
+
+    &:not(:last-child) {
+      margin-bottom: rem(32);
+
+      @include mq-mob {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    @include mq-mob-inv {
+      max-width: rem(815);
+      gap: rem(20);
+      font-size: rem(20);
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+
+    @include mq-mob-inv {
+      grid-template-columns: repeat(4, 1fr);
+      gap: rem(16);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(56);
+
+      @include mq-mob {
+        margin-bottom: rem(22);
+      }
+    }
+  }
+
+  &__item {
+    background: #E1F5FF;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .25rem;
+    min-height: rem(212);
+    color: $accentColor;
+    text-align: center;
+    padding: 2rem;
+
+    .number {
+      font-weight: 500;
+      font-size: 4rem;
+      line-height: 1.32;
+      direction: ltr;
+    }
+
+    >span {
+      font-size: rem(20);
+    }
+
+    @include mq-mob {
+      min-height: rem(152);
+      padding: 2rem;
+
+      .number {
+        font-size: 2rem;
+      }
+
+      >span {
+        font-size: rem(14);
+      }
+    }
+  }
+
+  &__button {
+    text-align: center;
+  }
+}
+
+.content-tabs {
+  margin-block: rem(106) rem(73);
+  padding-inline: rem(10);
+
+  @include mq-mob-inv {
+    margin-block: rem(153) rem(178);
+    padding-inline: rem(150);
+  }
+
+  &__header {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: rem(350);
+    gap: 1rem;
+
+    &:not(:last-child) {
+      margin-bottom: rem(46);
+    }
+
+    @include mq-mob-inv {
+      gap: rem(24);
+      max-width: rem(1126);
+      font-size: 1.25rem;
+    }
+
+    @include mq-mob {
+      font-size: rem(14);
+
+      &:not(:last-child) {
+        margin-bottom: rem(30);
+      }
+
+      .section-title {
+        max-width: rem(280);
+        margin-inline: auto;
+        font-size: rem(36);
+      }
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: 2rem;
+
+    @include mq-mob-inv {
+      gap: 1rem;
+      grid-template-columns: 1fr rem(1101);
+    }
+
+    &-nav {
+      display: flex;
+      gap: 0.75rem;
+
+      @include mq-mob {
+        overflow: auto;
+        width: calc(100% + #{rem(20)});
+        margin-inline: rem(-10);
+        padding-inline: rem(10);
+      }
+
+      @include mq-mob-inv {
+        gap: 2rem;
+        flex-direction: column;
+      }
+
+      button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        position: relative;
+
+        @include mq-mob-inv {
+          font-size: 1.5rem;
+          opacity: 0.5;
+        }
+
+        @include mq-mob {
+          flex-shrink: 0;
+          border-radius: 1rem;
+          justify-content: center;
+          flex-direction: column;
+          width: rem(148);
+          border: 1px solid #C4C4C4;
+          line-height: 1;
+          padding-block: 1rem;
+
+          &::before {
+            @include bf-af;
+            inset: 0;
+            border: 2px solid $accentColor;
+            opacity: 0;
+            border-radius: 1rem;
+            transition: $transition;
+          }
+        }
+
+        &.isActive {
+          opacity: 1;
+
+          @include mq-mob {
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+
+        img {
+          width: 2rem;
+
+          @include mq-mob {
+            width: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: grid;
+    background: #CEEFFF;
+    overflow: hidden;
+    border-radius: rem(32);
+
+    @include mq-mob-inv {
+      border-radius: rem(54);
+      gap: rem(60);
+      grid-template-columns: 1fr rem(461);
+    }
+
+    &-content {
+      padding: rem(40) rem(20) rem(36) rem(20);
+
+      @include mq-mob {
+        text-align: center;
+      }
+
+      @include mq-mob-inv {
+        padding: rem(62) rem(53) rem(62) 0;
+        font-size: 1.25rem;
+      }
+
+      h3 {
+        font-weight: 600;
+        font-size: 3rem;
+        line-height: 1.28;
+
+        &:not(:last-child) {
+          margin-bottom: 0.75rem;
+        }
+
+        @include mq-mob {
+          font-size: 2rem;
+
+          &:not(:last-child) {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: rem(76);
+        font-size: rem(18);
+
+        @include mq-mob {
+          font-size: rem(14);
+          gap: 1.25rem;
+        }
+
+        strong {
+          font-size: 3rem;
+          font-weight: 500;
+
+          @include mq-mob {
+            font-size: 2rem;
+          }
+        }
+
+        &:not(:first-child) {
+          margin-top: rem(86);
+
+          @include mq-mob {
+            margin-top: rem(60);
+          }
+        }
+      }
+
+      .btn {
+        &:not(:first-child) {
+          margin-top: 1.5rem;
+        }
+
+        @include mq-mob {
+          display: none;
+        }
+      }
+    }
+
+    &-media {
+      border-radius: rem(54) rem(0) rem(54) rem(54);
+      overflow: hidden;
+
+      @include mq-mob {
+        height: rem(243);
+        border-radius: rem(32) rem(0) rem(32) rem(32);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.projects-map {
+  @include mq-mob-inv {
+    padding-block: rem(128) rem(153);
+    background-image: url('../img/home/map-bg.png');
+    @include bg-set(cover);
+  }
+
+  @include mq-mob {
+    overflow: visible;
+    padding-block: rem(36) rem(12);
+
+    &::before {
+      @include bf-af;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% + #{rem(350)});
+      background-image: url('../img/home/map-bg-mob.png');
+      @include bg-set(cover);
+    }
+  }
+
+  &__header {
+    max-width: rem(343);
+    margin-inline: auto;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    gap: rem(10);
+    font-size: rem(14);
+
+    &:not(:last-child) {
+      margin-bottom: rem(120);
+
+      @include mq-mob {
+        margin-bottom: rem(40);
+      }
+    }
+
+    @include mq-mob-inv {
+      max-width: rem(765);
+      gap: rem(20);
+      font-size: 1.25rem;
+    }
+
+    .section-title {
+      font-weight: 600;
+
+      @include mq-mob {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+
+    @include mq-mob-inv {
+      gap: rem(358);
+    }
+
+    @include mq-mob {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  &__elem {
+    width: rem(274);
+
+    @include mq-mob-inv {
+      width: rem(368);
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid #FFFFFF;
+    width: rem(360);
+    border-radius: rem(24);
+
+    @include mq-mob {
+      order: -2;
+      padding: rem(14) rem(36) rem(22);
+      text-align: center;
+
+      .default-slider {
+        width: calc(100% + #{rem(8)});
+        margin-inline: rem(-4);
+      }
+
+      .swiper-slide {
+        padding-inline: .25rem;
+      }
+    }
+
+    @include mq-mob-inv {
+      border-radius: 4rem;
+      width: rem(577);
+      margin-top: rem(54);
+      padding: 2.5rem 2.5rem 2.5rem rem(60);
+
+      .swiper-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: rem(28);
+      line-height: calc(38/28);
+      margin-bottom: 2rem;
+
+      @include mq-mob {
+        font-size: rem(22);
+        margin-bottom: rem(26);
+      }
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: rem(54);
+      padding-inline: 1rem;
+
+      @include mq-mob {
+        margin-top: rem(26);
+        max-width: rem(164);
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: start;
+
+    @include mq-mob {
+      background: #fff;
+      border-radius: 1rem;
+      padding: rem(6);
+    }
+
+    &-image {
+      width: rem(120);
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #D9D9D9;
+
+      @include mq-mob {
+        width: 5rem;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+
+      @include mq-mob {
+        gap: 0.125rem;
+      }
+
+      h4 {
+        gap: 0.25rem;
+        display: inline-flex;
+        align-items: center;
+        font-size: rem(22);
+        font-weight: 600;
+
+        @include mq-mob {
+          font-size: rem(18);
+        }
+
+        i {
+          font-size: rem(24);
+        }
+      }
+
+      p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        @include mq-mob {
+          font-size: rem(14);
+        }
+      }
+    }
+  }
+}
+
+.content-slider {
+  margin-block: rem(29) rem(126);
+
+  @include mq-mob {
+    margin-block: rem(42);
+  }
+
+  &__inner {
+    max-width: rem(1656);
+    margin-inline: auto;
+    overflow: hidden;
+
+    .btns {
+      margin-top: 2rem;
+    }
+
+    @include mq-mob {
+      max-width: rem(338);
+    }
+  }
+
+  &__item {
+    background: $accentColor;
+    color: #fff;
+    display: grid;
+    overflow: hidden;
+    border-radius: rem(20);
+
+    @include mq-mob-inv {
+      border-radius: rem(60);
+      grid-template-columns: 1fr rem(810);
+    }
+
+    &-content {
+      @include mq-mob {
+        padding: rem(18) rem(20) rem(38);
+        font-size: rem(14);
+      }
+
+      @include mq-mob-inv {
+        padding: 3rem rem(107) 3rem rem(86);
+      }
+
+      h2 {
+        font-size: rem(70);
+        line-height: 1.32;
+
+        @include mq-mob {
+          font-size: rem(30);
+        }
+      }
+
+      h3 {
+        font-weight: 600;
+        font-size: 2.5rem;
+        line-height: 1.32;
+
+        @include mq-mob {
+          font-size: 1rem;
+        }
+
+        @include mq-mob-inv {
+          &+p {
+            font-size: 1.5rem;
+          }
+        }
+
+        &:not(:last-child) {
+          margin-bottom: rem(24);
+
+          @include mq-mob {
+            margin-bottom: rem(16);
+          }
+        }
+      }
+
+      p {
+        &:not(:last-child) {
+          margin-bottom: rem(28);
+
+          @include mq-mob {
+            margin-bottom: rem(12);
+          }
+        }
+
+        @include mq-mob-inv {
+          font-size: 1.25rem;
+        }
+      }
+
+      .btn {
+        padding-inline: 2rem;
+        margin-top: rem(54);
+
+        @include mq-mob {
+          margin-top: rem(22);
+          padding-inline: 1.5rem;
+        }
+
+        .icon__charity {
+          background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.6865 16.8432H12.1363C13.1715 16.8432 14.0073 16.0989 14.0073 15.0636C14.0073 14.2035 13.4255 13.5156 12.5916 13.3064C11.3968 13.0067 10.2059 12.7713 8.95943 12.8014C6.98525 12.8501 5.60361 13.9505 4.03906 14.9984' stroke='%23003D68' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.6865 16.8774C11.4191 16.7704 12.1654 16.8784 12.9068 16.8609C14.6241 16.82 15.9698 15.3683 17.2765 14.3837C17.9449 13.8806 18.88 13.9478 19.4706 14.5403C20.1254 15.199 20.1254 16.2654 19.4706 16.9241C18.0588 18.3408 16.8114 19.6563 14.8975 20.3996C12.2423 21.4329 9.77868 20.9318 7.08936 20.3996C6.04924 20.1943 5.09085 20.1817 4.03711 20.1817' stroke='%23003D68' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.456 5.27508C15.3665 4.7341 15.1203 4.21355 14.7019 3.79614C13.6404 2.73462 11.9202 2.73462 10.8586 3.79614C9.79713 4.85767 9.79713 6.57888 10.8586 7.6404C11.5193 8.30106 12.4349 8.54917 13.2892 8.38765' stroke='%23003D68' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.6841 7.94508C18.6841 9.44639 17.4669 10.6626 15.9656 10.6626C14.4652 10.6626 13.248 9.44639 13.248 7.94508C13.248 6.44376 14.4652 5.22656 15.9656 5.22656C17.4669 5.22656 18.6841 6.44376 18.6841 7.94508Z' stroke='%23003D68' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        }
+
+        @include hover {
+          .icon__charity {
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+
+    &-image {
+      position: relative;
+
+      @include mq-mob {
+        order: -2;
+      }
+
+      &::before {
+        @include bf-af;
+        inset: 0;
+        background: rgba(#000, .2);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.feedback-section {
+  padding-block: rem(180) rem(280);
+  background: $accentColor;
+  color: #fff;
+
+  @include mq-mob {
+    padding-block: rem(90) rem(85);
+    padding-inline: rem(8);
+  }
+
+  &__header {
+    margin-inline: auto;
+    text-align: center;
+    max-width: rem(308);
+
+    &:not(:last-child) {
+      margin-bottom: rem(46);
+
+      @include mq-mob {
+        margin-bottom: rem(56);
+      }
+    }
+
+    @include mq-mob-inv {
+      max-width: rem(920);
+      font-size: rem(22);
+    }
+  }
+
+  &__inner {
+    max-width: rem(1238);
+    margin-inline: auto;
+    position: relative;
+
+    .default-slider {
+      overflow: hidden;
+    }
+
+    .btns {
+      @include mq-mob-inv {
+        button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+
+          &.swiper-btn-prev {
+            left: calc(100% + #{rem(135)});
+          }
+
+          &.swiper-btn-next {
+            right: calc(100% + #{rem(135)});
+          }
+        }
+      }
+
+      @include mq-mob {
+        margin-top: rem(20);
+      }
+    }
+  }
+
+  &__item {
+    background: #215A81;
+    border-radius: 2rem;
+    display: grid;
+    padding: 0.5rem;
+    gap: 0.5rem;
+
+    @include mq-mob-inv {
+      padding: 1rem;
+      grid-template-columns: rem(597) 1fr;
+      gap: rem(32);
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12);
+      padding: 0.75rem;
+      font-size: rem(14);
+
+      @include mq-mob-inv {
+        padding: 1rem;
+        font-size: 1.25rem;
+      }
+
+      h3 {
+        font-weight: 600;
+        font-size: rem(28);
+
+        @include mq-mob {
+          font-size: rem(22);
+        }
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.8);
+
+        &:not(:last-child) {
+          margin-bottom: rem(20);
+        }
+      }
+
+      .icon__quotes {
+        width: 4rem;
+        height: 4rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #029FEE;
+        font-size: 1.5rem;
+        border-radius: 50%;
+
+        @include mq-mob {
+          width: 2.5rem;
+          height: 2.5rem;
+          font-size: rem(15);
+        }
+      }
+    }
+
+    &-image {
+      border-radius: 1rem;
+      overflow: hidden;
+      background: rgba(#fff, .1);
+
+      @include mq-mob {
+        order: -2;
+        border-radius: 1.25rem;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.posts-section {
+  margin-block: rem(100) rem(80);
+
+  @include mq-mob {
+    margin-block: rem(53) rem(67);
+  }
+
+  &__header {
+    max-width: rem(350);
+    margin-inline: auto;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: rem(56);
+
+      @include mq-mob {
+        margin-bottom: rem(36);
+      }
+    }
+
+    @include mq-mob-inv {
+      font-size: rem(20);
+      max-width: rem(1010);
+    }
+
+    @include mq-mob {
+      .section-title {
+        font-size: rem(36);
+        margin-bottom: rem(10);
+      }
+    }
+  }
+
+  &__inner {
+    max-width: rem(1532);
+    margin-inline: auto;
+
+    .default-slider {
+      overflow: hidden;
+
+      @include mq-mob {
+        width: calc(100% + #{rem(24)});
+        margin-inline: rem(-12);
+        padding-inline: 1rem;
+      }
+
+      @include mq-mob-inv {
+        width: calc(100% + #{rem(64)});
+        margin-inline: rem(-32);
+      }
+    }
+
+    .btns {
+      margin-top: rem(40);
+
+      @include mq-mob {
+        margin-top: rem(20);
+      }
+    }
+
+    .swiper-slide {
+      padding-inline: .75rem;
+      width: rem(304);
+
+      @include mq-mob-inv {
+        width: calc(100%/3);
+        padding-inline: 2rem;
+      }
+    }
+  }
+}
+
+.cta-banner {
+  margin-block: rem(132) rem(123);
+  overflow: visible;
+
+  @include mq-mob {
+    margin-block: rem(105) rem(50);
+  }
+
+  &__inner {
+    max-width: rem(1310);
+    margin-inline: auto;
+    border-radius: rem(35);
+    position: relative;
+    background: rgba(#CEEFFF, .45);
+    padding: 3rem rem(95) rem(70);
+
+    @include mq-mob {
+      max-width: rem(350);
+      border-radius: rem(16);
+      padding: rem(100) rem(24) rem(22);
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: rem(16);
+    max-width: rem(700);
+
+    @include mq-mob {
+      text-align: center;
+      gap: rem(10);
+      align-items: center;
+      font-size: rem(14);
+
+      .section-title {
+        font-size: rem(35);
+      }
+    }
+
+    @include mq-mob-inv {
+      font-size: 1.25rem;
+    }
+
+    p {
+      color: rgba(#000, .8);
+    }
+
+    .btn {
+      margin-top: 1rem;
+    }
+  }
+
+  &__media {
+    position: absolute;
+
+    @include mq-mob {
+      top: rem(-38);
+      inset-inline-start: rem(14);
+      width: rem(283);
+    }
+
+    @include mq-mob-inv {
+      bottom: 0;
+      inset-inline-end: 5rem;
+      width: rem(441);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes movingLine {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.running-logos {
+  margin-block: rem(100);
+
+  @include mq-mob {
+    margin-block: rem(50);
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: rem(18);
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @include mq-mob {
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  &__inner {
+    max-width: rem(1720);
+    margin-inline: auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__track {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    animation: movingLine 30s linear infinite;
+
+    @include mq-mob {
+      gap: 2rem;
+      animation-duration: 15s;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-shrink: 0;
+
+    @include mq-mob {
+      gap: 2rem;
+    }
+
+    img {
+      max-height: rem(64);
+
+      @include mq-mob {
+        max-height: rem(50);
+      }
+    }
+  }
+}

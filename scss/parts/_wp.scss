@@ -1,0 +1,15 @@
+.wpcf7 {
+  @include rtl {
+    direction: rtl;
+  }
+}
+
+.screen-reader-response {
+  display: none;
+}
+
+.wpcf7-not-valid-tip {
+  color: red;
+  font-size: 0.75em;
+  margin-top: 0.25em;
+}

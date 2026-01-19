@@ -1,0 +1,220 @@
+.acf-fc-popup {
+  ul {
+    li {
+      a {
+        position: relative;
+        overflow: unset;
+
+        &::after {
+          position: absolute;
+          content: '';
+          z-index: 10;
+          right: calc(100% + 0.5rem);
+          top: 0;
+          width: 34.375rem;
+          height: 18.75rem;
+          border-radius: .5rem;
+          box-shadow: 0 0 0.5625rem 0.25rem rgba(0, 0, 0, 0.25);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          background-color: #eee;
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            &::after {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: all;
+            }
+          }
+        }
+      }
+
+      a[data-layout="home_hero"] {
+        &::after {
+          background-image: url('../img/previews/home_hero.jpg');
+        }
+      }
+
+      a[data-layout="running_line"] {
+        &::after {
+          background-image: url('../img/previews/running_line.jpg');
+        }
+      }
+
+      a[data-layout="about_project"] {
+        &::after {
+          background-image: url('../img/previews/about_project.jpg');
+        }
+      }
+
+      a[data-layout="project_map"] {
+        &::after {
+          background-image: url('../img/previews/project_map.jpg');
+        }
+      }
+
+      a[data-layout="content_rows"] {
+        &::after {
+          background-image: url('../img/previews/content_rows.jpg');
+        }
+      }
+
+      a[data-layout="inner_hero"] {
+        &::after {
+          background-image: url('../img/previews/inner_hero.jpg');
+        }
+      }
+
+      a[data-layout="content_media"] {
+        &::after {
+          background-image: url('../img/previews/content_media.jpg');
+        }
+      }
+
+      a[data-layout="about_neighbourhood"] {
+        &::after {
+          background-image: url('../img/previews/about_neighbourhood.jpg');
+        }
+      }
+
+      a[data-layout="content_slider"] {
+        &::after {
+          background-image: url('../img/previews/content_slider.jpg');
+        }
+      }
+
+      a[data-layout="content_tabs"] {
+        &::after {
+          background-image: url('../img/previews/content_tabs.jpg');
+        }
+      }
+
+      a[data-layout="contact_page"] {
+        &::after {
+          background-image: url('../img/previews/contact_page.jpg');
+        }
+      }
+    }
+  }
+}
+
+.acf-field-68d701b738eac {
+  .acf-tab-group {
+    z-index: 10 !important;
+
+    li {
+      a {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: '';
+          z-index: 10;
+          left: calc(100% + 0.5rem);
+          top: 0;
+          width: 34.375rem;
+          height: 18.75rem;
+          border-radius: .5rem;
+          box-shadow: 0 0 0.5625rem 0.25rem rgba(0, 0, 0, 0.25);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          background-color: #eee;
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            &::after {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: all;
+            }
+          }
+        }
+      }
+
+      a[data-key="field_68d701d338ead"] {
+        &::after {
+          background-image: url('../img/previews/home_hero.jpg');
+        }
+      }
+
+      a[data-key="field_68daee67f1da9"] {
+        &::after {
+          background-image: url('../img/previews/running_line.jpg');
+        }
+      }
+
+      a[data-key="field_68daee7bf1dab"] {
+        &::after {
+          background-image: url('../img/previews/about_project.jpg');
+        }
+      }
+
+      a[data-key="field_68daee8ef1dad"] {
+        &::after {
+          background-image: url('../img/previews/project_map.jpg');
+        }
+      }
+
+      a[data-key="field_68daeeaff1daf"] {
+        &::after {
+          background-image: url('../img/previews/content_rows.jpg');
+        }
+      }
+
+      a[data-key="field_68daf184cbf90"] {
+        &::after {
+          background-image: url('../img/previews/inner_hero.jpg');
+        }
+      }
+
+      a[data-key="field_68daf195cbf92"] {
+        &::after {
+          background-image: url('../img/previews/content_media.jpg');
+        }
+      }
+
+      a[data-key="field_68daf20b0a5bc"] {
+        &::after {
+          background-image: url('../img/previews/about_neighbourhood.jpg');
+        }
+      }
+
+      a[data-key="field_68daf27f7c2bd"] {
+        &::after {
+          background-image: url('../img/previews/content_slider.jpg');
+        }
+      }
+
+      a[data-key="field_68daf62848ba3"] {
+        &::after {
+          background-image: url('../img/previews/content_tabs.jpg');
+        }
+      }
+
+      a[data-key="field_68daf6a52b6d0"] {
+        &::after {
+          background-image: url('../img/previews/contact_page.jpg');
+        }
+      }
+    }
+  }
+}
+
+.menu-item-bar .menu-item-handle {
+  max-width: 500px;
+}
+
+.menu-item-settings {
+  max-width: 500px;
+}

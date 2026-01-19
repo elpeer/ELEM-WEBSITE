@@ -1,0 +1,16 @@
+//settings and libs
+@import "inc/mixins";
+@import "inc/reset";
+@import "inc/fonts";
+
+@import "inc/global";
+@import "inc/libs";
+@import "inc/components";
+
+//parts
+@import "parts/header";
+@import "parts/footer";
+@import "parts/blocks";
+
+//pages
+@import "pages/home";

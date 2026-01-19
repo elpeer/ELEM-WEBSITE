@@ -1,0 +1,160 @@
+//forms
+.form-grid {
+  display: grid;
+  gap: rem(28);
+
+  @include mq-mob-inv {
+    grid-template-columns: repeat(2, 1fr);
+
+    .--wide {
+      grid-column: span 2;
+    }
+  }
+}
+
+form {
+  @include rtl {
+    input[type="tel"] {
+      direction: rtl;
+    }
+  }
+}
+
+.form-item {
+  position: relative;
+
+  label {
+    display: block;
+  }
+
+  input:not([type="checkbox"]),
+  textarea,
+  select {
+    display: block;
+    width: 100%;
+    height: 3rem;
+    padding-inline: 1.5rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: rem(58);
+    font-weight: 500;
+
+    &::placeholder {
+      color: rgba(#fff, .65);
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      &::placeholder {
+        color: transparent !important;
+      }
+    }
+  }
+
+  textarea {
+    height: rem(91);
+    padding-block: rem(16);
+    border-radius: rem(16);
+  }
+}
+
+.select-wrapper {
+  position: relative;
+
+  select {
+    width: 100%;
+  }
+
+  i {
+    position: absolute;
+    top: .75rem;
+    inset-inline-end: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.checkbox-item {
+  position: relative;
+
+  input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    width: 0;
+    height: 0;
+
+    &:checked+span::before {
+      background: #fff;
+      opacity: 1;
+    }
+  }
+
+  span {
+    font-size: 1rem;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: rem(10);
+    cursor: pointer;
+    color: rgba(#fff, .65);
+
+    &::before {
+      content: '';
+      display: block;
+      width: rem(14);
+      height: rem(14);
+      border: 1px solid currentColor;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+      border-radius: rem(3);
+    }
+  }
+}
+
+//containers
+.container {
+  width: 100%;
+  position: relative;
+  z-index: 5;
+
+  @include mq-mob-inv {
+    padding-inline: rem(56);
+  }
+
+  @include mq-mob {
+    padding-inline: rem(16);
+  }
+}
+
+.--row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+//visibility
+.d-block {
+  display: block !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-none-desktop {
+  @include mq-mob-inv {
+    display: none !important;
+  }
+}
+
+.d-none-mob {
+  @include mq-mob {
+    display: none !important;
+  }
+}
+
+.button-wrapper {
+  text-align: center;
+}

@@ -1,0 +1,93 @@
+@mixin font($font_name, $file_name, $weight) {
+  @font-face {
+    font-family: $font_name;
+    src: url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('../fonts/iconfont/iconfont.ttf?572h48') format('truetype'),
+    url('../fonts/iconfont/iconfont.woff?572h48') format('woff'),
+    url('../fonts/iconfont/iconfont.svg?572h48#Icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon__"],
+[class*=" icon__"] {
+  line-height: 1;
+  display: inline-block;
+  height: 1em;
+}
+
+[class^="icon__"]::before,
+[class*=" icon__"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon__globus {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 12C21 16.9706 16.9706 21 12 21M21 12C21 7.02944 16.9706 3 12 3M21 12H3M12 21C7.02944 21 3 16.9706 3 12M12 21C9.79086 21 8 16.9706 8 12C8 7.02944 9.79086 3 12 3M12 21C14.2091 21 16 16.9706 16 12C16 7.02944 14.2091 3 12 3M3 12C3 7.02944 7.02944 3 12 3' stroke='black' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+  @include bg-set(100%);
+}
+
+.icon__charity {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.6865 16.8432H12.1363C13.1715 16.8432 14.0073 16.0989 14.0073 15.0636C14.0073 14.2035 13.4255 13.5156 12.5916 13.3064C11.3968 13.0067 10.2059 12.7713 8.95943 12.8014C6.98525 12.8501 5.60361 13.9505 4.03906 14.9984' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.6865 16.8774C11.4191 16.7704 12.1654 16.8784 12.9068 16.8609C14.6241 16.82 15.9698 15.3683 17.2765 14.3837C17.9449 13.8806 18.88 13.9478 19.4706 14.5403C20.1254 15.199 20.1254 16.2654 19.4706 16.9241C18.0588 18.3408 16.8114 19.6563 14.8975 20.3996C12.2423 21.4329 9.77868 20.9318 7.08936 20.3996C6.04924 20.1943 5.09085 20.1817 4.03711 20.1817' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.456 5.27508C15.3665 4.7341 15.1203 4.21355 14.7019 3.79614C13.6404 2.73462 11.9202 2.73462 10.8586 3.79614C9.79713 4.85767 9.79713 6.57888 10.8586 7.6404C11.5193 8.30106 12.4349 8.54917 13.2892 8.38765' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.6841 7.94508C18.6841 9.44639 17.4669 10.6626 15.9656 10.6626C14.4652 10.6626 13.248 9.44639 13.248 7.94508C13.248 6.44376 14.4652 5.22656 15.9656 5.22656C17.4669 5.22656 18.6841 6.44376 18.6841 7.94508Z' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  @include bg-set(100%);
+}
+
+.icon__arrow-left:before {
+  content: "\e900";
+}
+
+.icon__arrow-right:before {
+  content: "\e901";
+}
+
+.icon__dropdown:before {
+  content: "\e903";
+}
+
+.icon__facebook:before {
+  content: "\e904";
+}
+
+.icon__instagram:before {
+  content: "\e906";
+}
+
+.icon__linkedin:before {
+  content: "\e907";
+}
+
+.icon__quotes:before {
+  content: "\e908";
+}
+
+.icon__twitter:before {
+  content: "\e909";
+}
+
+.icon__youtube:before {
+  content: "\e90a";
+}

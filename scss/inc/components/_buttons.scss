@@ -1,0 +1,136 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: rem(36);
+  padding-inline: rem(30);
+  font-weight: 500;
+  gap: .5rem;
+  height: rem(54);
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  &.--lg {
+    padding-inline: rem(40);
+
+    @include mq-mob-inv {
+      padding-inline: rem(60);
+      font-size: rem(22);
+      height: rem(64);
+    }
+
+    &:has(i) {
+      padding-inline-start: rem(55);
+
+      @include mq-mob {
+        padding-inline-start: rem(35);
+      }
+    }
+  }
+
+  @include mq-mob {
+    font-size: 1rem;
+    padding-inline: 1.5rem;
+    height: rem(46);
+  }
+
+  &.--primary {
+    background: $accentColor;
+    color: #fff;
+
+    @include hover {
+      background: darken($accentColor, 10%);
+    }
+  }
+
+  &.--secondary {
+    background: #fff;
+    color: $primaryColor;
+    border: 1px solid #fff;
+
+    @include hover {
+      background: transparent;
+      color: #fff;
+    }
+  }
+}
+
+.plus-btn {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    @include bf-af;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(#fff, .88);
+  }
+
+  &::after {
+    width: rem(2);
+    height: .875rem;
+    transition: $transition;
+  }
+
+  &::before {
+    width: .875rem;
+    height: rem(2);
+  }
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(6);
+  font-weight: 600;
+
+  @include mq-mob-inv {
+    font-size: rem(18);
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  @include hover {
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: rem(126);
+  height: rem(126);
+  border-radius: 50%;
+  background: rgba(#fff, .15);
+  font-size: rem(56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 2;
+
+  i {
+    transform: translateX(15%);
+  }
+
+  @include mq-mob {
+    width: rem(54);
+    height: rem(54);
+    font-size: rem(24);
+  }
+
+  @include hover {
+    background: rgba(#fff, .5);
+  }
+}

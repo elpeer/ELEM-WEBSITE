@@ -1,0 +1,80 @@
+.post-item {
+  &__image {
+    display: block;
+    border-radius: rem(24);
+    overflow: hidden;
+    aspect-ratio: 468/280;
+    background: rgba($accentColor, .2);
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include mq-mob {
+      border-radius: rem(14);
+    }
+
+    &::before {
+      @include bf-af;
+      inset: 0;
+      background: rgba($accentColor, 0.1);
+      opacity: 0;
+      transition: $transition;
+    }
+
+    @include hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__content {
+    padding-top: 1rem;
+
+    @include mq-mob {
+      padding-top: rem(10);
+    }
+
+    p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: rem(10);
+      -webkit-line-clamp: 3;
+
+      @include mq-mob-inv {
+        -webkit-line-clamp: 4;
+        margin-bottom: 1rem;
+        font-size: rem(20);
+      }
+    }
+  }
+
+  &__meta {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #029FEE;
+
+    @include mq-mob {
+      font-size: rem(14);
+      font-weight: 500;
+    }
+  }
+
+  &__title {
+    font-size: rem(28);
+    line-height: 1.32;
+
+    @include mq-mob {
+      font-size: 1.25rem;
+    }
+
+    @include hover {
+      color: $accentColor;
+    }
+  }
+}

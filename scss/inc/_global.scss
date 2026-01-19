@@ -1,0 +1,106 @@
+:root {
+  --header-height: 7.125rem;
+  --fixed-header-height: 5.25rem;
+  --header-height-mob: 5.125rem;
+  --compensate-scroll-bar: 15px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: var(--header-height) 0 0 0;
+  font-size: vw(16);
+
+  @include mq-mob {
+    font-size: vwm(16);
+  }
+}
+
+body {
+  width: 100%;
+  font-weight: 400;
+  line-height: 1.5;
+  min-height: 100vh;
+  font-size: 1rem;
+  color: $primaryColor;
+  font-family: $primaryFont;
+
+  &.fixed {
+    overflow: hidden;
+
+    @include mq-mob-inv {
+      padding-right: var(--compensate-scroll-bar, 15px);
+
+      .header {
+        padding-right: var(--compensate-scroll-bar, 15px);
+      }
+    }
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: rgba($primaryColor, .1);
+}
+
+::selection {
+  background-color: rgba($primaryColor, 0.5);
+  color: #fff;
+}
+
+.compensate-for-scrollbar {
+  .header {
+    padding-inline-end: 15px;
+  }
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #fff;
+}
+
+.media-wrapper {
+  overflow: hidden;
+  display: block;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.overflow {
+  overflow: hidden;
+
+  >span {
+    display: inline-block;
+  }
+}
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: rem(16);
+
+  &:has(.swiper-button-lock) {
+    display: none;
+  }
+}
+
+.tab-item {
+  &:not(:first-child) {
+    display: none;
+  }
+}
+
+.--compensate-for-header {
+  @include mq-mob-inv {
+    padding-top: var(--header-height);
+  }
+
+  @include mq-mob {
+    padding-top: var(--header-height-mob);
+  }
+}
