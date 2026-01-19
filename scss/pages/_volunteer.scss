@@ -1,0 +1,482 @@
+// Volunteer Hero Section
+.volunteer-hero {
+  background: $accentColor;
+  color: #fff;
+  display: grid;
+  min-height: rem(500);
+  position: relative;
+  overflow: hidden;
+
+  @include mq-mob-inv {
+    grid-template-columns: 1fr rem(600);
+    min-height: rem(600);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: rem(40) rem(20);
+    position: relative;
+    z-index: 2;
+
+    @include mq-mob-inv {
+      padding: rem(80) rem(80) rem(80) rem(132);
+    }
+
+    h1 {
+      font-size: rem(40);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: rem(20);
+
+      @include mq-mob-inv {
+        font-size: rem(72);
+        margin-bottom: rem(24);
+      }
+
+      strong {
+        font-weight: 600;
+      }
+    }
+
+    > p {
+      font-size: rem(14);
+      line-height: 1.6;
+      opacity: 0.9;
+      max-width: rem(550);
+      margin-bottom: rem(24);
+
+      @include mq-mob-inv {
+        font-size: rem(18);
+        margin-bottom: rem(32);
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(12);
+
+    @include mq-mob-inv {
+      gap: rem(16);
+    }
+  }
+
+  &__media {
+    position: relative;
+
+    @include mq-mob {
+      position: absolute;
+      inset: 0;
+      opacity: 0.2;
+    }
+
+    &::before {
+      @include bf-af;
+      inset: 0;
+      background: linear-gradient(to left, transparent 0%, $accentColor 100%);
+      z-index: 1;
+
+      @include mq-mob {
+        background: rgba($accentColor, 0.5);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// Stats Section
+.stats-section {
+  padding: rem(48) rem(20);
+  background: #fff;
+
+  @include mq-mob-inv {
+    padding: rem(80) rem(132);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(24);
+    max-width: rem(1000);
+    margin-inline: auto;
+
+    @include mq-mob-inv {
+      grid-template-columns: repeat(4, 1fr);
+      gap: rem(48);
+    }
+  }
+}
+
+.stat-item {
+  text-align: center;
+
+  &__icon {
+    width: rem(48);
+    height: rem(48);
+    margin-inline: auto;
+    margin-bottom: rem(12);
+
+    @include mq-mob-inv {
+      width: rem(64);
+      height: rem(64);
+      margin-bottom: rem(16);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__number {
+    font-size: rem(36);
+    font-weight: 700;
+    color: $accentColor;
+    line-height: 1;
+    margin-bottom: rem(4);
+
+    @include mq-mob-inv {
+      font-size: rem(56);
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__label {
+    font-size: rem(14);
+    color: $textColor;
+
+    @include mq-mob-inv {
+      font-size: rem(18);
+    }
+  }
+}
+
+// Volunteer Roles Section
+.volunteer-roles {
+  padding: rem(48) rem(20);
+  background: #F9F9F9;
+
+  @include mq-mob-inv {
+    padding: rem(100) rem(132);
+  }
+
+  &__header {
+    text-align: center;
+    max-width: rem(700);
+    margin-inline: auto;
+    margin-bottom: rem(32);
+
+    @include mq-mob-inv {
+      margin-bottom: rem(56);
+    }
+
+    .section-title {
+      margin-bottom: rem(12);
+    }
+
+    p {
+      font-size: rem(14);
+      color: $textColor;
+
+      @include mq-mob-inv {
+        font-size: rem(18);
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: rem(20);
+    grid-template-columns: 1fr;
+
+    @include mq-mob-inv {
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(32);
+    }
+  }
+}
+
+.role-card {
+  background: #fff;
+  border-radius: rem(24);
+  overflow: hidden;
+  transition: $transition;
+
+  @include hover {
+    box-shadow: 0 rem(10) rem(40) rgba(0, 0, 0, 0.1);
+    transform: translateY(rem(-4));
+  }
+
+  &__image {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: $transition;
+    }
+  }
+
+  @include hover {
+    .role-card__image img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__content {
+    padding: rem(20);
+
+    @include mq-mob-inv {
+      padding: rem(28);
+    }
+
+    h3 {
+      font-size: rem(20);
+      font-weight: 600;
+      margin-bottom: rem(8);
+      color: $primaryColor;
+
+      @include mq-mob-inv {
+        font-size: rem(24);
+        margin-bottom: rem(12);
+      }
+    }
+
+    p {
+      font-size: rem(14);
+      color: $textColor;
+      line-height: 1.6;
+
+      @include mq-mob-inv {
+        font-size: rem(16);
+      }
+    }
+  }
+}
+
+// Why Volunteer Section
+.why-volunteer {
+  display: grid;
+  background: #fff;
+
+  @include mq-mob-inv {
+    grid-template-columns: 1fr 1fr;
+    min-height: rem(500);
+  }
+
+  &__media {
+    aspect-ratio: 16/10;
+    overflow: hidden;
+
+    @include mq-mob-inv {
+      aspect-ratio: unset;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: rem(40) rem(20);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mq-mob-inv {
+      padding: rem(60) rem(80);
+    }
+
+    .section-title {
+      margin-bottom: rem(20);
+
+      @include mq-mob-inv {
+        margin-bottom: rem(28);
+      }
+    }
+
+    ul {
+      margin-bottom: rem(24);
+
+      @include mq-mob-inv {
+        margin-bottom: rem(32);
+      }
+
+      li {
+        position: relative;
+        padding-right: rem(24);
+        margin-bottom: rem(12);
+        font-size: rem(14);
+        color: $textColor;
+
+        @include mq-mob-inv {
+          font-size: rem(18);
+          margin-bottom: rem(16);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: rem(6);
+          width: rem(10);
+          height: rem(10);
+          background: $accentColor;
+          border-radius: 50%;
+
+          @include mq-mob-inv {
+            top: rem(8);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Volunteer CTA Section
+.volunteer-cta {
+  background: $accentColor;
+  padding: rem(60) rem(20);
+  text-align: center;
+  color: #fff;
+
+  @include mq-mob-inv {
+    padding: rem(100) rem(132);
+  }
+
+  &__inner {
+    max-width: rem(700);
+    margin-inline: auto;
+  }
+
+  h2 {
+    font-size: rem(32);
+    font-weight: 400;
+    margin-bottom: rem(16);
+
+    @include mq-mob-inv {
+      font-size: rem(56);
+      margin-bottom: rem(20);
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  p {
+    font-size: rem(14);
+    opacity: 0.9;
+    margin-bottom: rem(24);
+
+    @include mq-mob-inv {
+      font-size: rem(20);
+      margin-bottom: rem(32);
+    }
+  }
+}
+
+// FAQ Section
+.faq-section {
+  padding: rem(48) rem(20);
+  background: #fff;
+
+  @include mq-mob-inv {
+    padding: rem(100) rem(132);
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: rem(32);
+
+    @include mq-mob-inv {
+      margin-bottom: rem(56);
+    }
+  }
+}
+
+.faq-list {
+  max-width: rem(900);
+  margin-inline: auto;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #E5E5E5;
+
+  &:first-child {
+    border-top: 1px solid #E5E5E5;
+  }
+
+  &__head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(20) 0;
+    background: transparent;
+    border: none;
+    font-size: rem(16);
+    font-weight: 600;
+    text-align: right;
+    cursor: pointer;
+    transition: $transition;
+
+    @include mq-mob-inv {
+      padding: rem(24) 0;
+      font-size: rem(20);
+    }
+
+    i {
+      font-size: rem(20);
+      transition: $transition;
+      flex-shrink: 0;
+      margin-right: rem(16);
+
+      @include mq-mob-inv {
+        font-size: rem(24);
+      }
+    }
+
+    @include hover {
+      color: $accentColor;
+    }
+  }
+
+  &.isActive {
+    .accordion-item__head i {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__body {
+    display: none;
+    padding-bottom: rem(20);
+
+    @include mq-mob-inv {
+      padding-bottom: rem(24);
+    }
+
+    p {
+      font-size: rem(14);
+      color: $textColor;
+      line-height: 1.7;
+
+      @include mq-mob-inv {
+        font-size: rem(16);
+      }
+    }
+  }
+}

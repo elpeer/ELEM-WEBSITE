@@ -14,7 +14,7 @@
     fixedHeaderActions();
     menuActions();
     tabsSwitcher('.content-tabs__items-nav button', '.content-tabs', '.content-tabs__items-list .tab-item');
-    //accordionInit('.accordion-item', '.accordion-item__head');
+    accordionInit('.accordion-item', '.accordion-item__head');
 
     // Blog filter
     filterItems('.blog-filter button', '.blog-grid .post-item');
