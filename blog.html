@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+  <meta charset="utf-8" />
+  <title>בלוג | Elem</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.min.css" />
+</head>
+
+<body>
+  <div class="preloader"></div>
+
+  <header class="header">
+    <div class="header-inner">
+      <button class="burger-btn" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <a href="home.html" class="logo" aria-label="Go to homepage">
+        <img src="img/logo.png" alt="">
+      </a>
+
+      <div class="mobile-menu">
+        <nav class="main-menu">
+          <ul>
+            <li><a href="#">אודות</a></li>
+            <li><a href="#">תחומי פעילות</a></li>
+            <li><a href="#">קריירה והתנדבות</a></li>
+            <li><a href="#">תקשורת</a></li>
+            <li><a href="#">תרומות</a></li>
+            <li><a href="#">מרכז מידע</a></li>
+            <li><a href="#">צור קשר</a></li>
+          </ul>
+        </nav>
+
+        <span class="separator"></span>
+
+        <nav class="lang-switcher">
+          <button class="lang-switcher__current">
+            <i class="icon__globus"></i>
+            <span>עברית</span>
+            <i class="icon__dropdown"></i>
+          </button>
+          <ul class="menu">
+            <li class="lang-item">
+              <a lang="en-US" hreflang="en-US" href="#" aria-current="true">English</a>
+            </li>
+            <li class="lang-item current-lang">
+              <a lang="he-IL" hreflang="he-IL" href="#">עברית</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="social">
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="icon__youtube"></i></a>
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="icon__facebook"></i></a>
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="icon__twitter"></i></a>
+        </div>
+      </div>
+
+      <a href="#" class="btn --primary">תרמו לנו</a>
+    </div>
+  </header>
+
+  <main class="--compensate-for-header">
+    <section class="blog-hero">
+      <div class="blog-hero__content">
+        <h1>עלם מדווחת <strong>מהשטח</strong></h1>
+        <p>כתבות, ראיונות ותובנות מעולם הפעילות של עלם – על האתגרים, ההצלחות והשפעת העשייה שלנו על חייהם של בני הנוער</p>
+        <form class="blog-hero__search">
+          <input type="text" placeholder="חיפוש...">
+          <button type="submit" aria-label="חיפוש">
+            <i class="icon__search"></i>
+          </button>
+        </form>
+      </div>
+      <div class="blog-hero__media">
+        <img src="img/blog/blog-hero.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="blog-filter">
+        <button class="isActive" data-id="all">הכל</button>
+        <button data-id="news">חדשות עלם</button>
+        <button data-id="updates">עדכון ופרסום</button>
+        <button data-id="video">וידאו</button>
+        <button data-id="articles">כתבות</button>
+      </div>
+
+      <div class="blog-grid">
+        <article class="post-item" data-id="news">
+          <a href="#" class="post-item__image">
+            <img src="img/home/post-1.jpg" alt="">
+          </a>
+          <div class="post-item__content">
+            <div class="post-item__meta">15/03/24</div>
+            <h3 class="post-item__title"><a href="#">נוער במצוקה – לא מה שחשבתם</a></h3>
+            <p>האם נוער בסיכון הוא רק נערים שנפלטו ממסגרות חינוכיות? המציאות היום מורכבת הרבה יותר. חרמות, בדידות, פערים כלכליים וחרדה הם חלק מהגורמים שהופכים נערים...</p>
+            <a href="#" class="btn --primary">לקריאה</a>
+          </div>
+        </article>
+
+        <article class="post-item" data-id="updates">
+          <a href="#" class="post-item__image">
+            <img src="img/home/post-2.jpg" alt="">
+          </a>
+          <div class="post-item__content">
+            <div class="post-item__meta">15/03/24</div>
+            <h3 class="post-item__title"><a href="#">נוער במצוקה – לא מה שחשבתם</a></h3>
+            <p>האם נוער בסיכון הוא רק נערים שנפלטו ממסגרות חינוכיות? המציאות היום מורכבת הרבה יותר. חרמות, בדידות, פערים כלכליים וחרדה הם חלק מהגורמים שהופכים נערים...</p>
+            <a href="#" class="btn --primary">לקריאה</a>
+          </div>
+        </article>
+
+        <article class="post-item" data-id="video">
+          <a href="#" class="post-item__image">
+            <img src="img/home/post-3.jpg" alt="">
+          </a>
+          <div class="post-item__content">
+            <div class="post-item__meta">15/03/24</div>
+            <h3 class="post-item__title"><a href="#">נוער במצוקה – לא מה שחשבתם</a></h3>
+            <p>האם נוער בסיכון הוא רק נערים שנפלטו ממסגרות חינוכיות? המציאות היום מורכבת הרבה יותר. חרמות, בדידות, פערים כלכליים וחרדה הם חלק מהגורמים שהופכים נערים...</p>
+            <a href="#" class="btn --primary">לקריאה</a>
+          </div>
+        </article>
+
+        <article class="post-item" data-id="articles">
+          <a href="#" class="post-item__image">
+            <img src="img/home/post-1.jpg" alt="">
+          </a>
+          <div class="post-item__content">
+            <div class="post-item__meta">15/03/24</div>
+            <h3 class="post-item__title"><a href="#">נוער במצוקה – לא מה שחשבתם</a></h3>
+            <p>האם נוער בסיכון הוא רק נערים שנפלטו ממסגרות חינוכיות? המציאות היום מורכבת הרבה יותר. חרמות, בדידות, פערים כלכליים וחרדה הם חלק מהגורמים שהופכים נערים...</p>
+            <a href="#" class="btn --primary">לקריאה</a>
+          </div>
+        </article>
+
+        <article class="post-item" data-id="news">
+          <a href="#" class="post-item__image">
+            <img src="img/home/post-2.jpg" alt="">
+          </a>
+          <div class="post-item__content">
+            <div class="post-item__meta">15/03/24</div>
+            <h3 class="post-item__title"><a href="#">נוער במצוקה – לא מה שחשבתם</a></h3>
+            <p>האם נוער בסיכון הוא רק נערים שנפלטו ממסגרות חינוכיות? המציאות היום מורכבת הרבה יותר. חרמות, בדידות, פערים כלכליים וחרדה הם חלק מהגורמים שהופכים נערים...</p>
+            <a href="#" class="btn --primary">לקריאה</a>
+          </div>
+        </article>
+
+        <article class="post-item" data-id="updates">
+          <a href="#" class="post-item__image">
+            <img src="img/home/post-3.jpg" alt="">
+          </a>
+          <div class="post-item__content">
+            <div class="post-item__meta">15/03/24</div>
+            <h3 class="post-item__title"><a href="#">נוער במצוקה – לא מה שחשבתם</a></h3>
+            <p>האם נוער בסיכון הוא רק נערים שנפלטו ממסגרות חינוכיות? המציאות היום מורכבת הרבה יותר. חרמות, בדידות, פערים כלכליים וחרדה הם חלק מהגורמים שהופכים נערים...</p>
+            <a href="#" class="btn --primary">לקריאה</a>
+          </div>
+        </article>
+
+        <article class="post-item" data-id="video">
+          <a href="#" class="post-item__image">
+            <img src="img/home/post-1.jpg" alt="">
+          </a>
+          <div class="post-item__content">
+            <div class="post-item__meta">15/03/24</div>
+            <h3 class="post-item__title"><a href="#">נוער במצוקה – לא מה שחשבתם</a></h3>
+            <p>האם נוער בסיכון הוא רק נערים שנפלטו ממסגרות חינוכיות? המציאות היום מורכבת הרבה יותר. חרמות, בדידות, פערים כלכליים וחרדה הם חלק מהגורמים שהופכים נערים...</p>
+            <a href="#" class="btn --primary">לקריאה</a>
+          </div>
+        </article>
+
+        <article class="post-item" data-id="articles">
+          <a href="#" class="post-item__image">
+            <img src="img/home/post-2.jpg" alt="">
+          </a>
+          <div class="post-item__content">
+            <div class="post-item__meta">15/03/24</div>
+            <h3 class="post-item__title"><a href="#">נוער במצוקה – לא מה שחשבתם</a></h3>
+            <p>האם נוער בסיכון הוא רק נערים שנפלטו ממסגרות חינוכיות? המציאות היום מורכבת הרבה יותר. חרמות, בדידות, פערים כלכליים וחרדה הם חלק מהגורמים שהופכים נערים...</p>
+            <a href="#" class="btn --primary">לקריאה</a>
+          </div>
+        </article>
+
+        <article class="post-item" data-id="news">
+          <a href="#" class="post-item__image">
+            <img src="img/home/post-3.jpg" alt="">
+          </a>
+          <div class="post-item__content">
+            <div class="post-item__meta">15/03/24</div>
+            <h3 class="post-item__title"><a href="#">נוער במצוקה – לא מה שחשבתם</a></h3>
+            <p>האם נוער בסיכון הוא רק נערים שנפלטו ממסגרות חינוכיות? המציאות היום מורכבת הרבה יותר. חרמות, בדידות, פערים כלכליים וחרדה הם חלק מהגורמים שהופכים נערים...</p>
+            <a href="#" class="btn --primary">לקריאה</a>
+          </div>
+        </article>
+      </div>
+
+      <nav class="pagination">
+        <a href="#" class="pagination__arrow pagination__prev">
+          <i class="icon__arrow-right"></i>
+        </a>
+        <a href="#" class="pagination__item isActive">1</a>
+        <a href="#" class="pagination__item">2</a>
+        <a href="#" class="pagination__item">3</a>
+        <span class="pagination__dots">...</span>
+        <a href="#" class="pagination__item">8</a>
+        <a href="#" class="pagination__arrow pagination__next">
+          <i class="icon__arrow-left"></i>
+        </a>
+      </nav>
+    </section>
+
+    <section class="newsletter-section">
+      <div class="newsletter-section__inner">
+        <div class="newsletter-section__content">
+          <h2 class="section-title">הישארו <strong>מעודכנים</strong></h2>
+          <p>הירשמו לניוזלטר שלנו וקבלו עדכונים על פעילויות, אירועים וסיפורים מהשטח ישירות למייל</p>
+        </div>
+        <form class="newsletter-section__form">
+          <div class="form-item">
+            <input type="email" placeholder="מייל" required>
+          </div>
+          <button type="submit" class="btn --primary">להרשמה</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-head">
+      <div class="footer-logo">
+        <img src="img/footer-logo.svg" alt="">
+      </div>
+      <p>עלם מעניקה לנוער במצוקה תמיכה, ליווי וכלים לשיקום והשתלבות בחברה באמצעות תוכניות חינוכיות, טיפוליות ותעסוקתיות
+        ברחבי הארץ.</p>
+      <div class="footer-head__image d-none-desktop">
+        <img src="img/footer-img.png" alt="">
+      </div>
+    </div>
+    <div class="footer-middle">
+      <div class="footer-menus">
+        <ul>
+          <li class="menu-item-has-children">
+            <a href="#">כללי</a>
+            <ul>
+              <li><a href="#">אודות</a></li>
+              <li><a href="#">חנות</a></li>
+              <li><a href="#">מרכז מידע</a></li>
+              <li><a href="#">ELEM</a></li>
+              <li><a href="#">תרומות</a></li>
+              <li><a href="#">קריירה והתנדבות</a></li>
+              <li><a href="#">תקשורת</a></li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="#">תחומי פעילות</a>
+            <ul>
+              <li><a href="#"> קצה ונערות</a></li>
+              <li><a href="#">עלם דיגיטל - ייעוץ ותמיכה ברשת</a></li>
+              <li><a href="#">תעסוקה וליווי לחיים עצמאיים</a></li>
+              <li><a href="#">עבודת רחוב</a></li>
+              <li><a href="#">פגיעות מיניות</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-info">
+        <div class="footer-contacts">
+          <div class="footer-contacts__title">פרטי התקשרות</div>
+          <div class="footer-contacts__list">
+            <div class="item">
+              <div class="label">מיקום</div>
+              <span>בית נוימן, הירקון 35 בני ברק 5210423, ת.ד 53373</span>
+            </div>
+            <div class="item">
+              <div class="label">דברו איתנו</div>
+              <span>טל. <a href="tel:037686666">03-7686666</a> פקס. <a href="tel:036470319">03-6470319</a></span>
+            </div>
+            <div class="item">
+              <div class="label">שלחו לנו אימייל</div>
+              <a href="mailto:elem@elem.org.il">elem@elem.org.il</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="#" target="_blank"><i class="icon__youtube"></i></a>
+          <a href="#" target="_blank"><i class="icon__facebook"></i></a>
+          <a href="#" target="_blank"><i class="icon__instagram"></i></a>
+          <a href="#" target="_blank"><i class="icon__twitter"></i></a>
+          <a href="#" target="_blank"><i class="icon__linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>©2025 כל הזכויות שמורות. ELEM</p>
+      <div class="footer-bottom__image d-none-mob">
+        <img src="img/footer-img.png" alt="">
+      </div>
+      <a href="#">Design & Code by elevate</a>
+    </div>
+  </footer>
+
+  <script src="libs/jquery/jquery.min.js"></script>
+  <script src="libs/swiper/swiper.min.js"></script>
+  <script src="libs/aos/aos.js"></script>
+  <script src="libs/fancybox/fancybox.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
