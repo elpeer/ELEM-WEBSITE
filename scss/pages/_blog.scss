@@ -1,186 +1,110 @@
-// Blog Hero Section
-.blog-hero {
-  background: $accentColor;
-  color: #fff;
-  display: grid;
-  min-height: rem(420);
-  position: relative;
-  overflow: hidden;
+// Blog Section
+.blog-section {
+  padding: rem(24) rem(20) rem(60);
 
   @include mq-mob-inv {
-    grid-template-columns: 1fr rem(680);
-    min-height: rem(500);
+    padding: rem(40) rem(132) rem(120);
   }
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: rem(40) rem(20);
-    position: relative;
-    z-index: 2;
+  &__title {
+    font-size: rem(40);
+    font-weight: 600;
+    margin-bottom: rem(24);
 
     @include mq-mob-inv {
-      padding: rem(80) rem(80) rem(80) rem(132);
-      max-width: rem(800);
-    }
-
-    h1 {
-      font-size: rem(48);
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: rem(16);
-
-      @include mq-mob-inv {
-        font-size: rem(80);
-        margin-bottom: rem(24);
-      }
-
-      strong {
-        font-weight: 600;
-      }
-    }
-
-    p {
-      font-size: rem(14);
-      line-height: 1.5;
-      opacity: 0.9;
-      max-width: rem(500);
-
-      @include mq-mob-inv {
-        font-size: rem(20);
-        max-width: rem(600);
-      }
-    }
-  }
-
-  &__search {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: rem(50);
-    margin-top: rem(24);
-    overflow: hidden;
-    max-width: rem(400);
-
-    @include mq-mob-inv {
-      margin-top: rem(40);
-      max-width: rem(480);
-    }
-
-    input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      padding: rem(14) rem(20);
-      color: #fff;
-      font-size: 1rem;
-
-      @include mq-mob-inv {
-        padding: rem(18) rem(28);
-        font-size: rem(18);
-      }
-
-      &::placeholder {
-        color: rgba(255, 255, 255, 0.6);
-      }
-
-      &:focus {
-        outline: none;
-      }
-    }
-
-    button {
-      background: transparent;
-      border: none;
-      color: #fff;
-      padding: rem(14) rem(20);
-      font-size: rem(20);
-      cursor: pointer;
-      transition: $transition;
-
-      @include mq-mob-inv {
-        padding: rem(18) rem(28);
-        font-size: rem(24);
-      }
-
-      @include hover {
-        opacity: 0.7;
-      }
-    }
-  }
-
-  &__media {
-    position: relative;
-
-    @include mq-mob {
-      position: absolute;
-      inset: 0;
-      opacity: 0.3;
-    }
-
-    &::before {
-      @include bf-af;
-      inset: 0;
-      background: linear-gradient(to left, transparent 0%, $accentColor 100%);
-      z-index: 1;
-
-      @include mq-mob {
-        background: rgba($accentColor, 0.5);
-      }
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      font-size: rem(64);
+      margin-bottom: rem(40);
     }
   }
 }
 
-// Blog Section
-.blog-section {
-  padding: rem(40) rem(20) rem(60);
+// Breadcrumb
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  font-size: rem(14);
+  margin-bottom: rem(16);
+  color: $textColor;
 
   @include mq-mob-inv {
-    padding: rem(80) rem(132) rem(120);
+    font-size: 1rem;
+    margin-bottom: rem(24);
+  }
+
+  a {
+    color: $textColor;
+    transition: $transition;
+
+    @include hover {
+      color: $accentColor;
+    }
+  }
+
+  &__separator {
+    color: #999;
+  }
+
+  &__current {
+    color: $accentColor;
+    font-weight: 500;
   }
 }
 
 // Blog Filter
 .blog-filter {
   display: flex;
-  flex-wrap: wrap;
-  gap: rem(10);
+  gap: rem(24);
   margin-bottom: rem(32);
-  justify-content: center;
+  border-bottom: 1px solid #E5E5E5;
+  padding-bottom: rem(16);
+  overflow-x: auto;
 
   @include mq-mob-inv {
-    gap: rem(16);
-    margin-bottom: rem(56);
+    gap: rem(40);
+    margin-bottom: rem(48);
+    padding-bottom: rem(20);
   }
 
   button {
-    padding: rem(10) rem(20);
-    border-radius: rem(50);
-    border: 1px solid #C4C4C4;
+    position: relative;
+    padding: 0;
+    padding-bottom: rem(16);
+    border: none;
     background: transparent;
     font-size: rem(14);
     font-weight: 500;
+    color: $textColor;
     transition: $transition;
     cursor: pointer;
+    white-space: nowrap;
 
     @include mq-mob-inv {
-      padding: rem(14) rem(32);
-      font-size: 1rem;
+      font-size: rem(18);
+      padding-bottom: rem(20);
     }
 
-    &.isActive,
-    &:hover {
+    &::after {
+      @include bf-af;
+      bottom: rem(-1);
+      left: 0;
+      width: 100%;
+      height: rem(3);
       background: $accentColor;
-      border-color: $accentColor;
-      color: #fff;
+      transform: scaleX(0);
+      transition: $transition;
+    }
+
+    &.isActive {
+      color: $accentColor;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    @include hover {
+      color: $accentColor;
     }
   }
 }
@@ -208,83 +132,17 @@
       p {
         flex: 1;
       }
+
+      .btn {
+        margin-top: auto;
+      }
     }
   }
 }
 
-// Pagination
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: rem(8);
-  margin-top: rem(48);
-
-  @include mq-mob-inv {
-    gap: rem(12);
-    margin-top: rem(72);
-  }
-
-  &__item,
-  &__arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: rem(44);
-    height: rem(44);
-    border-radius: 50%;
-    font-size: rem(16);
-    font-weight: 500;
-    transition: $transition;
-    border: 1px solid transparent;
-
-    @include mq-mob-inv {
-      width: rem(52);
-      height: rem(52);
-      font-size: rem(18);
-    }
-  }
-
-  &__item {
-    background: #F5F5F5;
-    color: $primaryColor;
-
-    &.isActive {
-      background: $accentColor;
-      color: #fff;
-    }
-
-    @include hover {
-      background: rgba($accentColor, 0.1);
-      border-color: $accentColor;
-    }
-  }
-
-  &__arrow {
-    background: transparent;
-    border: 1px solid #C4C4C4;
-    font-size: rem(20);
-
-    @include mq-mob-inv {
-      font-size: rem(24);
-    }
-
-    @include hover {
-      background: $accentColor;
-      border-color: $accentColor;
-      color: #fff;
-    }
-
-    &[disabled] {
-      opacity: 0.4;
-      pointer-events: none;
-    }
-  }
-
-  &__dots {
-    padding: 0 rem(8);
-    color: #999;
-  }
+// Full width button modifier
+.btn.--full {
+  width: 100%;
 }
 
 // Newsletter Section
