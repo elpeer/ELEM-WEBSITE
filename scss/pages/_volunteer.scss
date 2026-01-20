@@ -2,900 +2,99 @@
 // VOLUNTEER PAGE STYLES
 // =============================================
 
-// Hero Section
-.vol-hero {
+// Breadcrumb
+.breadcrumb {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: #fff;
-  padding: rem(40) rem(20);
-  gap: rem(40);
+  gap: rem(8);
+  padding: rem(20) rem(80);
+  font-size: rem(14);
+  color: $primaryColor;
 
-  @include mq-mob-inv {
-    padding: rem(60) rem(132);
-    gap: rem(80);
-    min-height: rem(400);
+  @include mq-mob {
+    padding: rem(16) rem(20);
   }
 
-  &__content {
-    flex: 1;
-
-    h1 {
-      font-size: rem(48);
-      font-weight: 700;
-      color: $accentColor;
-      margin-bottom: rem(16);
-      line-height: 1.1;
-
-      @include mq-mob-inv {
-        font-size: rem(80);
-        margin-bottom: rem(20);
-      }
-    }
-
-    p {
-      font-size: rem(16);
-      color: $textColor;
-      line-height: 1.5;
-
-      @include mq-mob-inv {
-        font-size: rem(20);
-      }
-    }
-  }
-
-  &__image {
-    display: none;
-
-    @include mq-mob-inv {
-      display: block;
-      width: rem(450);
-      height: rem(350);
-      flex-shrink: 0;
-      border-radius: rem(200) rem(200) rem(200) rem(40);
-      overflow: hidden;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-
-// Blue CTA Section
-.vol-cta-blue {
-  background: $lightBg;
-  padding: rem(40) rem(20);
-
-  @include mq-mob-inv {
-    padding: rem(60) rem(132);
-  }
-
-  &__inner {
-    display: flex;
-    flex-direction: column;
-    gap: rem(24);
-    align-items: center;
-    max-width: rem(1100);
-    margin-inline: auto;
-
-    @include mq-mob-inv {
-      flex-direction: row;
-      gap: rem(60);
-    }
-  }
-
-  &__image {
-    width: 100%;
-    max-width: rem(380);
-    border-radius: rem(20);
-    overflow: hidden;
-    box-shadow: 0 rem(15) rem(40) rgba(0, 0, 0, 0.15);
-    position: relative;
-
-    &::after {
-      content: 'zoom';
-      position: absolute;
-      top: rem(16);
-      right: rem(16);
-      background: #2D8CFF;
-      color: #fff;
-      font-size: rem(14);
-      font-weight: 600;
-      padding: rem(6) rem(14);
-      border-radius: rem(8);
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-  }
-
-  &__content {
-    flex: 1;
-    text-align: center;
-
-    @include mq-mob-inv {
-      text-align: right;
-    }
-
-    h2 {
-      font-size: rem(32);
-      font-weight: 700;
-      color: $accentColor;
-      margin-bottom: rem(16);
-
-      @include mq-mob-inv {
-        font-size: rem(48);
-        margin-bottom: rem(20);
-      }
-    }
-
-    p {
-      font-size: rem(16);
-      color: $textColor;
-      margin-bottom: rem(24);
-      line-height: 1.6;
-
-      @include mq-mob-inv {
-        font-size: rem(20);
-        margin-bottom: rem(32);
-      }
-    }
-  }
-}
-
-// Form Section
-.vol-form-section {
-  padding: rem(48) rem(20);
-  text-align: center;
-  background: #fff;
-
-  @include mq-mob-inv {
-    padding: rem(80) rem(132);
-  }
-
-  > h2 {
-    font-size: rem(32);
-    font-weight: 700;
-    margin-bottom: rem(8);
-
-    @include mq-mob-inv {
-      font-size: rem(48);
-      margin-bottom: rem(12);
-    }
-  }
-
-  > p {
-    font-size: rem(16);
-    color: $textColor;
-    margin-bottom: rem(32);
-
-    @include mq-mob-inv {
-      font-size: rem(18);
-      margin-bottom: rem(48);
-    }
-  }
-}
-
-.vol-form {
-  max-width: rem(1000);
-  margin-inline: auto;
-
-  &__grid {
-    display: grid;
-    gap: rem(12);
-    margin-bottom: rem(24);
-
-    @include mq-mob-inv {
-      grid-template-columns: repeat(5, 1fr);
-      gap: rem(16);
-      margin-bottom: rem(32);
-    }
-  }
-
-  .form-item input {
-    width: 100%;
-    height: rem(56);
-    padding: 0 rem(20);
-    border: none;
-    border-radius: rem(12);
-    font-size: 1rem;
-    background: #F5F5F5;
-    transition: $transition;
-
-    &:focus {
-      outline: none;
-      background: #EBEBEB;
-    }
-
-    &::placeholder {
-      color: #888;
-    }
-  }
-
-  > .btn {
-    min-width: rem(180);
-    height: rem(56);
-  }
-}
-
-// Info Cards Section
-.vol-info-cards {
-  padding: rem(48) rem(20);
-  background: #fff;
-
-  @include mq-mob-inv {
-    padding: rem(80) rem(132);
-  }
-
-  &__grid {
-    display: grid;
-    gap: rem(20);
-    max-width: rem(1200);
-    margin-inline: auto;
-
-    @include mq-mob-inv {
-      grid-template-columns: repeat(3, 1fr);
-      gap: rem(32);
-    }
-  }
-}
-
-.info-card {
-  background: #F9F9F9;
-  border-radius: rem(20);
-  padding: rem(32);
-  text-align: right;
-
-  @include mq-mob-inv {
-    padding: rem(40);
-  }
-
-  &__icon {
-    width: rem(64);
-    height: rem(64);
-    margin-bottom: rem(20);
-    background: $lightBg;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @include mq-mob-inv {
-      width: rem(80);
-      height: rem(80);
-      margin-bottom: rem(24);
-    }
-
-    img {
-      width: 40%;
-      height: 40%;
-      object-fit: contain;
-    }
-  }
-
-  h3 {
-    font-size: rem(22);
-    font-weight: 700;
-    margin-bottom: rem(16);
+  a {
     color: $accentColor;
+    text-decoration: none;
 
-    @include mq-mob-inv {
-      font-size: rem(28);
-      margin-bottom: rem(20);
+    @include hover {
+      text-decoration: underline;
     }
   }
 
-  p {
-    font-size: rem(15);
-    color: $textColor;
-    line-height: 1.7;
+  &__separator {
+    color: $primaryColor;
+  }
 
-    @include mq-mob-inv {
-      font-size: rem(17);
-    }
+  &__current {
+    color: $primaryColor;
   }
 }
 
-// Free Hour Section
-.vol-free-hour {
-  background: #fff;
-  padding: rem(60) rem(20);
-  border-top: 1px solid #EEEEEE;
+// Hero Section
+.vol-hero {
+  padding: 0 rem(80);
+  margin-bottom: rem(60);
 
-  @include mq-mob-inv {
-    padding: rem(100) rem(132);
+  @include mq-mob {
+    padding: 0 rem(20);
+    margin-bottom: rem(40);
   }
 
-  &__inner {
-    max-width: rem(1000);
-    margin-inline: auto;
-  }
-
-  &__content {
-    text-align: right;
-
-    h2 {
-      font-size: rem(32);
-      font-weight: 400;
-      margin-bottom: rem(20);
-      color: $primaryColor;
-      line-height: 1.3;
-
-      @include mq-mob-inv {
-        font-size: rem(56);
-        margin-bottom: rem(24);
-      }
-
-      strong {
-        color: $accentColor;
-        font-weight: 700;
-      }
-    }
-
-    p {
-      font-size: rem(16);
-      color: $textColor;
-      margin-bottom: rem(28);
-      line-height: 1.6;
-
-      @include mq-mob-inv {
-        font-size: rem(20);
-        margin-bottom: rem(36);
-      }
-    }
-  }
-}
-
-// Video Section
-.vol-video-section {
-  padding: rem(48) rem(20);
-  background: #fff;
-  text-align: center;
-
-  @include mq-mob-inv {
-    padding: rem(80) rem(132);
-  }
-
-  > h2 {
-    font-size: rem(32);
-    font-weight: 700;
-    margin-bottom: rem(32);
-
-    @include mq-mob-inv {
-      font-size: rem(48);
-      margin-bottom: rem(48);
-    }
-  }
-}
-
-.vol-video {
-  max-width: rem(1000);
-  margin-inline: auto;
-
-  &__play {
-    display: block;
+  &__banner {
     position: relative;
-    border-radius: rem(32);
+    width: 100%;
+    border-radius: 0 0 rem(40) rem(40);
     overflow: hidden;
-    aspect-ratio: 16/9;
+
+    @include mq-mob {
+      border-radius: 0 0 rem(24) rem(24);
+    }
 
     img {
       width: 100%;
-      height: 100%;
+      height: rem(450);
       object-fit: cover;
+
+      @include mq-mob {
+        height: rem(280);
+      }
     }
   }
 
   &__overlay {
     position: absolute;
-    inset: 0;
-    background: rgba($accentColor, 0.85);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    gap: rem(20);
-  }
-
-  &__stats {
     text-align: center;
+    color: #fff;
 
-    .number {
-      display: block;
-      font-size: rem(56);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.02em;
+    h1 {
+      font-size: rem(48);
+      font-weight: 700;
+      margin-bottom: rem(16);
 
-      @include mq-mob-inv {
-        font-size: rem(100);
+      @include mq-mob {
+        font-size: rem(32);
+        margin-bottom: rem(12);
       }
     }
 
-    .text {
-      display: block;
+    p {
       font-size: rem(18);
-      margin-top: rem(8);
-      font-weight: 500;
+      font-weight: 400;
 
-      @include mq-mob-inv {
-        font-size: rem(28);
-        margin-top: rem(12);
+      @include mq-mob {
+        font-size: rem(14);
       }
-    }
-  }
-
-  .play-btn {
-    width: rem(72);
-    height: rem(72);
-    border-radius: 50%;
-    background: #fff;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: $transition;
-    margin-top: rem(16);
-
-    @include mq-mob-inv {
-      width: rem(96);
-      height: rem(96);
-      margin-top: rem(24);
-    }
-
-    i {
-      font-size: rem(28);
-      color: $accentColor;
-      margin-right: rem(-4);
-
-      @include mq-mob-inv {
-        font-size: rem(40);
-      }
-    }
-
-    @include hover {
-      transform: scale(1.1);
-      box-shadow: 0 rem(10) rem(30) rgba(0, 0, 0, 0.2);
-    }
-  }
-}
-
-// Job Listings Section
-.vol-jobs-section {
-  padding: rem(48) rem(20);
-  background: #F9F9F9;
-
-  @include mq-mob-inv {
-    padding: rem(80) rem(132);
-  }
-
-  > h2 {
-    font-size: rem(32);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: rem(32);
-
-    @include mq-mob-inv {
-      font-size: rem(48);
-      margin-bottom: rem(40);
-    }
-  }
-}
-
-.vol-jobs-tabs {
-  display: flex;
-  justify-content: center;
-  gap: rem(12);
-  margin-bottom: rem(32);
-
-  @include mq-mob-inv {
-    gap: rem(16);
-    margin-bottom: rem(40);
-  }
-
-  button {
-    padding: rem(12) rem(28);
-    border-radius: rem(50);
-    border: 1px solid #D9D9D9;
-    background: #fff;
-    font-size: rem(15);
-    font-weight: 500;
-    transition: $transition;
-    cursor: pointer;
-
-    @include mq-mob-inv {
-      padding: rem(14) rem(36);
-      font-size: rem(17);
-    }
-
-    &.isActive {
-      background: $lightBg;
-      border-color: transparent;
-      color: $accentColor;
-      font-weight: 600;
-    }
-
-    @include hover {
-      border-color: $accentColor;
-      color: $accentColor;
-    }
-  }
-}
-
-.vol-jobs-list {
-  max-width: rem(900);
-  margin-inline: auto;
-}
-
-.job-item {
-  background: #fff;
-  border-radius: rem(24);
-  padding: rem(28);
-  margin-bottom: rem(24);
-
-  @include mq-mob-inv {
-    padding: rem(40);
-  }
-
-  &__header {
-    display: flex;
-    align-items: center;
-    gap: rem(10);
-    margin-bottom: rem(16);
-    font-size: rem(14);
-
-    @include mq-mob-inv {
-      font-size: rem(16);
-      margin-bottom: rem(20);
-    }
-  }
-
-  &__icon {
-    color: $accentColor;
-    font-size: rem(18);
-  }
-
-  &__location {
-    color: $textColor;
-  }
-
-  &__type {
-    background: $lightBg;
-    color: $accentColor;
-    padding: rem(6) rem(16);
-    border-radius: rem(20);
-    font-weight: 600;
-    font-size: rem(13);
-  }
-
-  &__title {
-    font-size: rem(22);
-    font-weight: 700;
-    margin-bottom: rem(20);
-    color: $accentColor;
-
-    @include mq-mob-inv {
-      font-size: rem(28);
-      margin-bottom: rem(24);
-    }
-  }
-
-  &__content {
-    font-size: rem(15);
-    color: $textColor;
-    line-height: 1.8;
-    margin-bottom: rem(24);
-
-    @include mq-mob-inv {
-      font-size: rem(17);
-      margin-bottom: rem(32);
-    }
-
-    p {
-      margin-bottom: rem(12);
-
-      strong {
-        color: $primaryColor;
-        font-weight: 600;
-      }
-    }
-
-    ul {
-      padding-right: rem(24);
-      margin: rem(8) 0;
-
-      li {
-        margin-bottom: rem(6);
-      }
-    }
-  }
-}
-
-.vol-jobs-social {
-  display: flex;
-  justify-content: center;
-  gap: rem(16);
-  margin-top: rem(32);
-
-  a {
-    width: rem(48);
-    height: rem(48);
-    border-radius: 50%;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: rem(22);
-    color: $accentColor;
-    transition: $transition;
-    box-shadow: 0 rem(4) rem(12) rgba(0, 0, 0, 0.08);
-
-    @include hover {
-      background: $accentColor;
-      color: #fff;
-      transform: translateY(rem(-2));
-    }
-  }
-}
-
-// Testimonials Section
-.vol-testimonials {
-  padding: rem(48) rem(20);
-  background: #fff;
-
-  @include mq-mob-inv {
-    padding: rem(80) rem(132);
-  }
-
-  > h2 {
-    font-size: rem(32);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: rem(40);
-
-    @include mq-mob-inv {
-      font-size: rem(48);
-      margin-bottom: rem(56);
-    }
-  }
-
-  &__grid {
-    display: grid;
-    gap: rem(24);
-    max-width: rem(1100);
-    margin-inline: auto;
-
-    @include mq-mob-inv {
-      grid-template-columns: repeat(2, 1fr);
-      gap: rem(40);
-    }
-  }
-}
-
-.testimonial-card {
-  display: flex;
-  gap: rem(20);
-  background: #F9F9F9;
-  border-radius: rem(20);
-  padding: rem(24);
-  align-items: flex-start;
-
-  @include mq-mob-inv {
-    gap: rem(28);
-    padding: rem(32);
-  }
-
-  &__image {
-    width: rem(100);
-    height: rem(100);
-    border-radius: rem(16);
-    overflow: hidden;
-    flex-shrink: 0;
-
-    @include mq-mob-inv {
-      width: rem(140);
-      height: rem(140);
-      border-radius: rem(20);
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  &__content {
-    flex: 1;
-    padding-top: rem(8);
-
-    p {
-      font-size: rem(15);
-      color: $textColor;
-      line-height: 1.7;
-      margin-bottom: rem(16);
-
-      @include mq-mob-inv {
-        font-size: rem(17);
-        margin-bottom: rem(20);
-      }
-    }
-  }
-
-  &__name {
-    font-size: rem(15);
-    font-weight: 700;
-    color: $accentColor;
-
-    @include mq-mob-inv {
-      font-size: rem(17);
-    }
-  }
-}
-
-// Volunteers Blog Section
-.vol-blog {
-  padding: rem(48) rem(20);
-  background: #F9F9F9;
-
-  @include mq-mob-inv {
-    padding: rem(80) rem(132);
-  }
-
-  > h2 {
-    font-size: rem(32);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: rem(40);
-
-    @include mq-mob-inv {
-      font-size: rem(48);
-      margin-bottom: rem(56);
-    }
-  }
-
-  &__grid {
-    display: grid;
-    gap: rem(24);
-    max-width: rem(1000);
-    margin-inline: auto;
-
-    @include mq-mob-inv {
-      grid-template-columns: repeat(2, 1fr);
-      gap: rem(40);
-    }
-  }
-}
-
-.blog-card {
-  background: #fff;
-  border-radius: rem(20);
-  overflow: hidden;
-  transition: $transition;
-
-  @include hover {
-    box-shadow: 0 rem(12) rem(40) rgba(0, 0, 0, 0.12);
-    transform: translateY(rem(-4));
-  }
-
-  &__image {
-    aspect-ratio: 16/10;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: $transition;
-    }
-  }
-
-  @include hover {
-    .blog-card__image img {
-      transform: scale(1.05);
-    }
-  }
-
-  &__content {
-    padding: rem(24);
-
-    @include mq-mob-inv {
-      padding: rem(32);
-    }
-
-    h3 {
-      font-size: rem(20);
-      font-weight: 700;
-      margin-bottom: rem(12);
-      color: $primaryColor;
-      line-height: 1.3;
-
-      @include mq-mob-inv {
-        font-size: rem(24);
-        margin-bottom: rem(16);
-      }
-    }
-
-    p {
-      font-size: rem(15);
-      color: $textColor;
-      line-height: 1.6;
-      margin-bottom: rem(16);
-
-      @include mq-mob-inv {
-        font-size: rem(16);
-        margin-bottom: rem(20);
-      }
-    }
-
-    .link {
-      font-size: rem(15);
-      font-weight: 700;
-      color: $accentColor;
-      transition: $transition;
-      display: inline-flex;
-      align-items: center;
-      gap: rem(4);
-
-      @include hover {
-        gap: rem(8);
-      }
-    }
-  }
-}
-
-// Business CTA Section
-.vol-business-cta {
-  background: $accentColor;
-  padding: rem(80) rem(20);
-  text-align: center;
-
-  @include mq-mob-inv {
-    padding: rem(120) rem(132);
-  }
-
-  &__inner {
-    max-width: rem(800);
-    margin-inline: auto;
-    color: #fff;
-  }
-
-  h2 {
-    font-size: rem(48);
-    font-weight: 700;
-    margin-bottom: rem(16);
-
-    @include mq-mob-inv {
-      font-size: rem(72);
-      margin-bottom: rem(20);
-    }
-  }
-
-  p {
-    font-size: rem(18);
-    opacity: 0.9;
-    margin-bottom: rem(32);
-
-    @include mq-mob-inv {
-      font-size: rem(28);
-      margin-bottom: rem(40);
-    }
-  }
-
-  .btn.--secondary {
-    background: #fff;
-    color: $accentColor;
-    border-color: #fff;
-
-    @include hover {
-      background: rgba(#fff, 0.9);
     }
   }
 }
